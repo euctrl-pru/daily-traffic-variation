@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div id="EntityPicker_div"></div>
+	<div id="MyChart1_div"></div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+		var Data;
+		
+		var EntityPicker;
+		
+		var MyChart1;
+		var MyView1;
+
+		var SelectedEntity = "Aer Lingus Teoranta";
+		
+		google.load('visualization', '1.0', {'packages':['corechart', 'table', 'controls']});
+		google.setOnLoadCallback(Initialisation);
+
+		function Initialisation() {
+			var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1TCIOqZLGPk2kq6V7RLHVu7Dx2ao1jxTLQS3xhFzZlwE/edit?usp=sharing');
+			query.send(drawDashboard);
+		}
+
+		function drawDashboard(response) {
+			Data = response.getDataTable();
+
+//------------------------AO Picker--------------------------------------------
+			EntityPicker = new google.visualization.ControlWrapper({
+				controlType: 'CategoryFilter',
+				containerId: 'EntityPicker_div',
+				dataTable: Data,
+				state: {selectedValues: [SelectedEntity]},
+				options: {
+					filterColumnLabel: 'Entity',
+					ui: {
+						label: 'Select Aircraft Operator:',
+						caption: '',
+//						labelStacking: 'vertical',
+						allowTyping: false,
+						allowMultiple: false,
+						sortValues: true,
+						allowNone: false,
+					},
+				}
+			});
+			EntityPicker.draw();
+			google.visualization.events.addListener(EntityPicker, 'statechange', changeEntityPicker);
+
+			function changeEntityPicker() {
+				SelectedEntity = EntityPicker.getState().selectedValues[0];
+				UpdateMyChart1();
+			};	
+
+
+//---------------------------MyChart 1---------------------------------------------
+			MyChart1 = new google.visualization.ComboChart(document.getElementById('MyChart1_div'));
+			google.visualization.events.addListener(MyChart1, 'select', SelectInChart);
+			UpdateMyChart1();
+
+			function SelectInChart() {
+				alert(MyView1.getValue(MyChart1.getSelection()[0].row, 1));
+			};	
+		}
+		
+		function UpdateMyChart1() {
+			MyView1 = new google.visualization.DataView(Data);
+			MyView1.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			MyView1.setColumns([2,4,7]);
+
+			var	optionsMyChart1 = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: 1300,
+				height: 600,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:1},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: 'out',
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyView1.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+					1: {format: '#%'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'70%'
+				},
+			};
+			MyChart1.draw(MyView1,optionsMyChart1);
+		};
+</script>

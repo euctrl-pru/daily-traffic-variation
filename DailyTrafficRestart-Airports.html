@@ -1,0 +1,2848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Daily Traffic Restart - Airports</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.7.2/css/all.css integrity=sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr crossorigin=anonymous>
+</head>
+
+<body onresize="ResizeWindow()">
+
+<style>
+	table, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		background-color: White;
+		padding: 5px;
+		align: middle;    
+	}
+</style>
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top"> -->
+	<!-- <a href="http://www.eurocontrol.int/"><img src="Pictures/Eurocontrol_logo_2010.svg" style="float:left" class="img" alt="Eurocontrol" width="50" height="50"></a> -->
+    <a href="http://www.eurocontrol.int/"><img src="Pictures/ec-color-print.jpg" style="float:left" class="img" alt="Eurocontrol" width="50" height="50"></a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle navbar-brand" href="#" id="navbardrop" data-toggle="dropdown"><i class="far fa-star fa-spin fa-fw"></i> Aviation Intelligence</a>
+				<div class=dropdown-menu>
+					<a class=dropdown-item href=https://ansperformance.eu/><i class="fas fa-home"></i><span>&nbsp;<strong>Home</strong></span></a>
+
+					<a class=dropdown-item href=https://www.eurocontrol.int/Economics/BalancedScorecard.html><i class="fas fa-th"></i><span>&nbsp <strong>Balanced Scorecard</strong></span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/traffic/><i class="fas fa-plane-departure"></i><span>&nbsp <strong>Traffic</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html><i class="far fa-star fa-spin fa-fw"></i><span> Daily Traffic Variation & Restart </span><i class="far fa-star fa-spin fa-fw"></i></a>
+					<a class=dropdown-item href=https://ansperformance.eu/traffic/statfor/><span>&nbsp &nbsp &nbsp Traffic Forecast</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/><i class="fas fa-leaf"></i><span>&nbsp <strong>Efficiency & Environment</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/hfe/><span>&nbsp &nbsp &nbsp Horizontal Flight Efficiency</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/vfe/><span>&nbsp &nbsp &nbsp Vertical Flight Efficiency</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/asma/><span>&nbsp &nbsp &nbsp Terminal Holdings</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/taxiout/><span>&nbsp &nbsp &nbsp Taxi-out</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/economics/><i class="fas fa-euro-sign"></i><span>&nbsp &nbsp <strong>Economics</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteMainDashboard.html><span>&nbsp &nbsp &nbsp Service Units</span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteUnitRates.html><span>&nbsp &nbsp &nbsp Unit Rates and Costs</span></a>
+ 					<a class=dropdown-item href=https://www.eurocontrol.int/ACE><span>&nbsp &nbsp &nbsp ATM Cost Effectiveness</span></a>
+ 					<a class=dropdown-item href=https://ansperformance.eu/economics/finance/><span>&nbsp &nbsp &nbsp ANSPs Financial Situation</span></a>
+ 					<a class=dropdown-item href=https://ansperformance.eu/economics/cba/><span>&nbsp &nbsp &nbsp CBA</span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-user-friends"></i><span> <strong>Stakeholder views</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/airport/><span>&nbsp &nbsp &nbsp Airport View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/ansp/><span>&nbsp &nbsp &nbsp ANSP View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/fab/><span>&nbsp &nbsp &nbsp FAB View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/state/><span>&nbsp &nbsp &nbsp State View</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/publications/><i class="fas fa-book"></i><span>&nbsp <strong>Publications</strong></span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/data/><i class="fas fa-database"></i><span>&nbsp <strong>Data</strong></span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-hands-helping"></i><span> <strong>Reference</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/study/><span>&nbsp &nbsp &nbsp Studies</span></a>
+				
+					<a class=dropdown-item href=https://ansperformance.eu/definition/><span>&nbsp &nbsp &nbsp Definitions</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/methodology/><span>&nbsp &nbsp &nbsp Methodology</span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-external-link-alt"></i><span>&nbsp <strong>External</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/prudata/dashboard/><i class="fas "></i><span>&nbsp &nbsp &nbsp Single European Sky Portal</span></a>
+					<a class=dropdown-item href=https://www4.icao.int/ganpportal/><i class="fas "></i><span>&nbsp &nbsp &nbsp ICAO GANP</span></a>
+
+				</div>
+			</li>
+			<li class="nav-item dropdown active">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Traffic Variation </a>
+				<div class="dropdown-menu">
+					<strong>&nbsp States</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-States.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-States.html"> Overview of the evolution</a>
+
+					<strong>&nbsp ACCs</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-ACCs.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-ACCs.html"> Overview of the evolution</a>
+
+					<strong>&nbsp Airports</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-Airports.html"> Daily Variation</a>
+					<a class="dropdown-item active" href="./DailyTrafficRestart-Airports.html"> Overview of the evolution</a>
+
+					<strong>&nbsp Aircraft Operators</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-AOs.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-AOs.html"> Overview of the evolution</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Punctuality Variation</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="./DailyPunctuality-States.html"> States</a>
+					<a class="dropdown-item" href="./DailyPunctuality-Airports.html"> Airports</a>
+				</div>
+			</li>
+			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Operated Schedules %</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="./DailyOperatedSchedules-Airports.html"> Airports</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container-fluid">
+<!--	<marquee width="101%" direction="left" loop="1" bgcolor="LightGrey">
+		<img src="Pictures/ec-color-print.jpg" width="25" height="25"> <strong>14 July 2022: New feature!!!</strong> New webpages on daily punctuality at <a href="https://www.eurocontrol.int/Economics/DailyPunctuality-States.html">State</a> and <a href="https://www.eurocontrol.int/Economics/DailyPunctuality-Airports.html">Airport</a> levels as well as at our <a href="https://ansperformance.eu/traffic/punctuality/">summary page</a>. The definition of indicators can be found using the "About" button. Download xls files of underlying data using the "Download" button. This data is published by EUROCONTROL as is in the interest of the exchange of information. It may be copied in whole or in part providing that the copyright notice and disclaimer are included. 
+	</marquee>
+-->
+
+	<table>
+	  <tr>
+		<td align="center"><h2>Airports</h2><h4>Overview of the evolution of<br> dep/arr flights<br>since 1 October 2023</h4></td>
+		<td><div id="Amsterdam_div"></div></td>
+		<td><div id="Antalya_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Athens_div"></div></td>
+		<td><div id="Barcelona_div"></div></td>
+		<td><div id="Belgrade_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="BerlinBrandenburg_div"></div></td>
+		<td><div id="Bratislava_div"></div></td>
+		<td><div id="Brussels_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="BucharestOtopeni_div"></div></td>
+		<td><div id="Budapest_div"></div></td>
+		<td><div id="Chisinau_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Copenhagen_div"></div></td>
+		<td><div id="Dublin_div"></div></td>
+		<td><div id="Dusseldorf_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Frankfurt_div"></div></td>
+		<td><div id="Geneva_div"></div></td>
+		<td><div id="Helsinki_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="iGAIstanbul_div"></div></td>
+		<td><div id="IstanbulSabihaGokcen_div"></div></td>
+		<td><div id="KyivBoryspil_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Larnaca_div"></div></td>
+		<td><div id="Liege_div"></div></td>
+		<td><div id="Lisbon_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Ljubljana_div"></div></td>
+		<td><div id="LondonGatwick_div"></div></td>
+		<td><div id="LondonHeathrow_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="LondonStansted_div"></div></td>
+		<td><div id="Luxembourg_div"></div></td>
+		<td><div id="Madrid_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Malaga_div"></div></td>
+		<td><div id="Malta_div"></div></td>
+		<td><div id="Manchester_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Milan_div"></div></td>
+		<td><div id="Munich_div"></div></td>
+		<td><div id="Nice_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Oslo_div"></div></td>
+		<td><div id="Palma_div"></div></td>
+		<td><div id="ParisCDG_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="ParisOrly_div"></div></td>
+		<td><div id="Podgorica_div"></div></td>
+		<td><div id="Prague_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Riga_div"></div></td>
+		<td><div id="Rome_div"></div></td>
+		<td><div id="Sarajevo_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Skopje_div"></div></td>
+		<td><div id="Sofia_div"></div></td>
+		<td><div id="Stockholm_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Tallinn_div"></div></td>
+		<td><div id="Tbilisi_div"></div></td>
+		<td><div id="TelAviv_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Tirana_div"></div></td>
+		<td><div id="Vienna_div"></div></td>
+		<td><div id="Vilnius_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Warsaw_div"></div></td>
+		<td><div id="Yerevan_div"></div></td>
+		<td><div id="Zagreb_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Zurich_div"></div></td>
+	  </tr>
+	</table>
+</div>
+</body>
+
+<footer id=footer class="text-center text-muted">
+	<br>
+    &copy; 2024&nbsp;EUROCONTROL &nbsp; &mdash; &nbsp;
+    <a href=https://ansperformance.eu/about/disclaimer/>Disclaimer</a>
+	&mdash;
+    <a href=https://www.eurocontrol.int/info/privacy-and-website-terms-use target=_blank>Privacy statement</a>
+	&mdash;
+    <span>
+      <a href="https://www.eurocontrol.int/form/aviation-intelligence-unit-aiu-newsletter">Subscribe to our Newsletter <i class="fas fa-envelope"></i></a>
+    </span>
+</footer>
+
+</html>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+		var SelectedStartDate = new Date(2020,8,1,0,0,0,0);
+</script>
+
+<script type="text/javascript">
+		var Data;
+		
+		var MyEntityView;
+		var MyEntityView1;
+		var MyEntityChart;
+
+		var MyWidthCharts = 650; //365*2;
+		var MyHeightCharts = 300; //150*2;
+		
+		var hAxisTextPosition = 'out';
+		var CharAreaHeight = '70%';
+
+		var SelectedEntity;
+		
+		var MyTable1;
+
+		if (window.innerWidth >1200) {
+			MyWidthCharts = window.innerWidth*0.315;
+		}
+
+		function ResizeWindow() {
+			if (window.innerWidth >1200) {
+				MyWidthCharts = window.innerWidth*0.315;
+			}
+			else {
+				MyWidthCharts = 1200*0.315;
+			}
+			drawDashboard();
+		}
+		
+		google.load('visualization', '1.0', {'packages':['corechart', 'table', 'controls']});
+		google.setOnLoadCallback(Initialisation);
+
+		function Initialisation() {
+			var request = new XMLHttpRequest();
+			request.open("GET", "tfc_apt_data.json", false);
+			request.send(null)
+			var oscardata = JSON.parse(request.responseText);
+
+			Datastring = google.visualization.arrayToDataTable(oscardata);
+
+			Data = new google.visualization.DataTable();
+
+			for(j = 0; j < Datastring.getNumberOfColumns(); j++) {
+				Data.addColumn(Datastring.getValue(0,j), Datastring.getColumnLabel(j));
+				// alert(Datastring.getValue(0,j))
+			}
+
+			Datastring.removeRow(0)
+			Data.addRows(Datastring.getNumberOfRows());
+
+			// alert(Datastring.getNumberOfRows() + "/" + Data.getNumberOfRows() );
+
+			for(j = 0; j < Data.getNumberOfColumns(); j++) {
+
+				if (Data.getColumnType(j) == 'number') {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j, Number (Datastring.getValue(i,j)));
+					}
+				}
+				else if (Data.getColumnType(j) == 'date') {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j, new Date(Datastring.getValue(i,j)));
+					}
+				}
+				else {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j,Datastring.getValue(i,j));
+					}
+				}
+
+			}
+			drawDashboard();
+		}
+
+		function drawDashboard() {
+			
+//________________________________________________________________________________________________________
+			SelectedEntity="Amsterdam";
+			var MyChartAmsterdam = new google.visualization.ComboChart(document.getElementById('Amsterdam_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartAmsterdam.draw(MyEntityView,optionsMyEntityChart);
+			
+//________________________________________________________________________________________________________
+			SelectedEntity="Antalya";
+			var MyChartAntalya = new google.visualization.ComboChart(document.getElementById('Antalya_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartAntalya.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Athens";
+			var MyChartAthens = new google.visualization.ComboChart(document.getElementById('Athens_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartAthens.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Barcelona";
+			var MyChartBarcelona = new google.visualization.ComboChart(document.getElementById('Barcelona_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartBarcelona.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Belgrade";
+			var MyChartBelgrade = new google.visualization.ComboChart(document.getElementById('Belgrade_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartBelgrade.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Berlin Brandenburg";
+			var MyChartBerlinBrandenburg = new google.visualization.ComboChart(document.getElementById('BerlinBrandenburg_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartBerlinBrandenburg.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Bratislava";
+			var MyChartBratislava = new google.visualization.ComboChart(document.getElementById('Bratislava_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartBratislava.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Brussels";
+			var MyChartBrussels = new google.visualization.ComboChart(document.getElementById('Brussels_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartBrussels.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Bucharest Otopeni";
+			var MyChartBucharestOtopeni = new google.visualization.ComboChart(document.getElementById('BucharestOtopeni_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartBucharestOtopeni.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Budapest";
+			var MyChartBudapest = new google.visualization.ComboChart(document.getElementById('Budapest_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartBudapest.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Chisinau";
+			var MyChartChisinau = new google.visualization.ComboChart(document.getElementById('Chisinau_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartChisinau.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Copenhagen";
+			var MyChartCopenhagen = new google.visualization.ComboChart(document.getElementById('Copenhagen_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartCopenhagen.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Dublin";
+			var MyChartDublin = new google.visualization.ComboChart(document.getElementById('Dublin_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartDublin.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Dusseldorf";
+			var MyChartDusseldorf = new google.visualization.ComboChart(document.getElementById('Dusseldorf_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartDusseldorf.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Frankfurt";
+			var MyChartFrankfurt = new google.visualization.ComboChart(document.getElementById('Frankfurt_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartFrankfurt.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Geneva";
+			var MyChartGeneva = new google.visualization.ComboChart(document.getElementById('Geneva_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartGeneva.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Helsinki";
+			var MyChartHelsinki = new google.visualization.ComboChart(document.getElementById('Helsinki_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartHelsinki.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="iGA Istanbul";
+			var MyChartIstanbul = new google.visualization.ComboChart(document.getElementById('iGAIstanbul_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartIstanbul.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Istanbul Sabiha Gokcen";
+			var MyChartIstanbulSabihaGokcen = new google.visualization.ComboChart(document.getElementById('IstanbulSabihaGokcen_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartIstanbulSabihaGokcen.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Kyiv Boryspil";
+			var MyChartKyivBoryspil = new google.visualization.ComboChart(document.getElementById('KyivBoryspil_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartKyivBoryspil.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Larnaca";
+			var MyChartLarnaca = new google.visualization.ComboChart(document.getElementById('Larnaca_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartLarnaca.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Liege";
+			var MyChartLiege = new google.visualization.ComboChart(document.getElementById('Liege_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartLiege.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Lisbon";
+			var MyChartLisbon = new google.visualization.ComboChart(document.getElementById('Lisbon_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartLisbon.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Ljubljana";
+			var MyChartLjubljana = new google.visualization.ComboChart(document.getElementById('Ljubljana_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartLjubljana.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="London Gatwick";
+			var MyChartLondonGatwick = new google.visualization.ComboChart(document.getElementById('LondonGatwick_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartLondonGatwick.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="London Heathrow";
+			var MyChartLondonHeathrow = new google.visualization.ComboChart(document.getElementById('LondonHeathrow_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartLondonHeathrow.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="London Stansted";
+			var MyChartLondonStansted = new google.visualization.ComboChart(document.getElementById('LondonStansted_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartLondonStansted.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Luxembourg";
+			var MyChartLuxembourg = new google.visualization.ComboChart(document.getElementById('Luxembourg_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartLuxembourg.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Madrid Barajas";
+			var MyChartMadrid = new google.visualization.ComboChart(document.getElementById('Madrid_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartMadrid.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Malaga";
+			var MyChartMalaga = new google.visualization.ComboChart(document.getElementById('Malaga_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartMalaga.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Malta";
+			var MyChartMalta = new google.visualization.ComboChart(document.getElementById('Malta_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartMalta.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Manchester";
+			var MyChartManchester = new google.visualization.ComboChart(document.getElementById('Manchester_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartManchester.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Milan Malpensa";
+			var MyChartMilan = new google.visualization.ComboChart(document.getElementById('Milan_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartMilan.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Munich";
+			var MyChartMunich = new google.visualization.ComboChart(document.getElementById('Munich_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartMunich.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Nice";
+			var MyChartNice = new google.visualization.ComboChart(document.getElementById('Nice_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartNice.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Oslo";
+			var MyChartOslo = new google.visualization.ComboChart(document.getElementById('Oslo_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartOslo.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Palma de Mallorca";
+			var MyChartPalma = new google.visualization.ComboChart(document.getElementById('Palma_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartPalma.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Paris Charles de Gaulle";
+			var MyChartParisCDG = new google.visualization.ComboChart(document.getElementById('ParisCDG_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartParisCDG.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Paris Orly";
+			var MyChartParisOrly = new google.visualization.ComboChart(document.getElementById('ParisOrly_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartParisOrly.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Podgorica";
+			var MyChartPodgorica = new google.visualization.ComboChart(document.getElementById('Podgorica_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartPodgorica.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Prague";
+			var MyChartPrague = new google.visualization.ComboChart(document.getElementById('Prague_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartPrague.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Riga";
+			var MyChartRiga = new google.visualization.ComboChart(document.getElementById('Riga_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartRiga.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Rome Fiumicino";
+			var MyChartRome = new google.visualization.ComboChart(document.getElementById('Rome_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartRome.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Sarajevo";
+			var MyChartSarajevo = new google.visualization.ComboChart(document.getElementById('Sarajevo_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartSarajevo.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Skopje";
+			var MyChartSkopje = new google.visualization.ComboChart(document.getElementById('Skopje_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartSkopje.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Sofia";
+			var MyChartSofia = new google.visualization.ComboChart(document.getElementById('Sofia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartSofia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Stockholm Arlanda";
+			var MyChartStockholm = new google.visualization.ComboChart(document.getElementById('Stockholm_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartStockholm.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Tallinn";
+			var MyChartTallinn = new google.visualization.ComboChart(document.getElementById('Tallinn_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartTallinn.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Tbilisi";
+			var MyChartTbilisi = new google.visualization.ComboChart(document.getElementById('Tbilisi_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartTbilisi.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Tel Aviv";
+			var MyChartTelAviv = new google.visualization.ComboChart(document.getElementById('TelAviv_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartTelAviv.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Tirana";
+			var MyChartTirana = new google.visualization.ComboChart(document.getElementById('Tirana_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartTirana.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Vienna";
+			var MyChartVienna = new google.visualization.ComboChart(document.getElementById('Vienna_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartVienna.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Vilnius";
+			var MyChartVilnius = new google.visualization.ComboChart(document.getElementById('Vilnius_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartVilnius.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Warsaw Chopin";
+			var MyChartWarsaw = new google.visualization.ComboChart(document.getElementById('Warsaw_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartWarsaw.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Yerevan";
+			var MyChartYerevan = new google.visualization.ComboChart(document.getElementById('Yerevan_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartYerevan.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Zagreb";
+			var MyChartZagreb = new google.visualization.ComboChart(document.getElementById('Zagreb_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartZagreb.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Zurich";
+			var MyChartZurich = new google.visualization.ComboChart(document.getElementById('Zurich_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity},{column:2, minValue: SelectedStartDate}]));
+			MyEntityView.setColumns([2,4,6]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'darkBlue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'red', pointSize: 0, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:CharAreaHeight
+				},
+			};
+			MyChartZurich.draw(MyEntityView,optionsMyEntityChart);
+		}
+</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ3R0C35X7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJ3R0C35X7');
+</script>

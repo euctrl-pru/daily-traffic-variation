@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DAIO - States</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.7.2/css/all.css integrity=sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr crossorigin=anonymous>
+</head>
+
+<body onresize="ResizeWindow()">
+
+<style>
+	table, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		background-color: White;
+		padding: 5px;
+		align: middle;    
+	}
+</style>
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top"> -->
+	<!-- <a href="http://www.eurocontrol.int/"><img src="Pictures/Eurocontrol_logo_2010.svg" style="float:left" class="img" alt="Eurocontrol" width="50" height="50"></a> -->
+    <a href="http://www.eurocontrol.int/"><img src="Pictures/ec-color-print.jpg" style="float:left" class="img" alt="Eurocontrol" width="50" height="50"></a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle navbar-brand" href="#" id="navbardrop" data-toggle="dropdown"><i class="far fa-star fa-spin fa-fw"></i> Aviation Intelligence</a>
+				<div class=dropdown-menu>
+					<a class=dropdown-item href=https://ansperformance.eu/><i class="fas fa-home"></i><span>&nbsp;<strong>Home</strong></span></a>
+
+					<a class=dropdown-item href=https://www.eurocontrol.int/Economics/BalancedScorecard.html><i class="fas fa-th"></i><span>&nbsp <strong>Balanced Scorecard</strong></span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/traffic/><i class="fas fa-plane-departure"></i><span>&nbsp <strong>Traffic</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html><i class="far fa-star fa-spin fa-fw"></i><span> Daily Traffic Variation & Restart </span><i class="far fa-star fa-spin fa-fw"></i></a>
+					<a class=dropdown-item href=https://ansperformance.eu/traffic/statfor/><span>&nbsp &nbsp &nbsp Traffic Forecast</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/><i class="fas fa-leaf"></i><span>&nbsp <strong>Efficiency & Environment</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/hfe/><span>&nbsp &nbsp &nbsp Horizontal Flight Efficiency</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/vfe/><span>&nbsp &nbsp &nbsp Vertical Flight Efficiency</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/asma/><span>&nbsp &nbsp &nbsp Terminal Holdings</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/taxiout/><span>&nbsp &nbsp &nbsp Taxi-out</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/economics/><i class="fas fa-euro-sign"></i><span>&nbsp &nbsp <strong>Economics</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteMainDashboard.html><span>&nbsp &nbsp &nbsp Service Units</span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteUnitRates.html><span>&nbsp &nbsp &nbsp Unit Rates and Costs</span></a>
+ 					<a class=dropdown-item href=https://www.eurocontrol.int/ACE><span>&nbsp &nbsp &nbsp ATM Cost Effectiveness</span></a>
+ 					<a class=dropdown-item href=https://ansperformance.eu/economics/finance/><span>&nbsp &nbsp &nbsp ANSPs Financial Situation</span></a>
+ 					<a class=dropdown-item href=https://ansperformance.eu/economics/cba/><span>&nbsp &nbsp &nbsp CBA</span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-user-friends"></i><span> <strong>Stakeholder views</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/airport/><span>&nbsp &nbsp &nbsp Airport View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/ansp/><span>&nbsp &nbsp &nbsp ANSP View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/fab/><span>&nbsp &nbsp &nbsp FAB View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/state/><span>&nbsp &nbsp &nbsp State View</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/publications/><i class="fas fa-book"></i><span>&nbsp <strong>Publications</strong></span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/data/><i class="fas fa-database"></i><span>&nbsp <strong>Data</strong></span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-hands-helping"></i><span> <strong>Reference</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/study/><span>&nbsp &nbsp &nbsp Studies</span></a>
+				
+					<a class=dropdown-item href=https://ansperformance.eu/definition/><span>&nbsp &nbsp &nbsp Definitions</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/methodology/><span>&nbsp &nbsp &nbsp Methodology</span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-external-link-alt"></i><span>&nbsp <strong>External</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/prudata/dashboard/><i class="fas "></i><span>&nbsp &nbsp &nbsp Single European Sky Portal</span></a>
+					<a class=dropdown-item href=https://www4.icao.int/ganpportal/><i class="fas "></i><span>&nbsp &nbsp &nbsp ICAO GANP</span></a>
+
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Traffic Variation </a>
+				<div class="dropdown-menu">
+					<strong>&nbsp States</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-States.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-States.html"> Overview of the evolution</a>
+
+					<strong>&nbsp ACCs</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-ACCs.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-ACCs.html"> Overview of the evolution</a>
+
+					<strong>&nbsp Airports</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-Airports.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-Airports.html"> Overview of the evolution</a>
+
+					<strong>&nbsp Aircraft Operators</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-AOs.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-AOs.html"> Overview of the evolution</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Punctuality Variation</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="./DailyPunctuality-States.html"> States</a>
+					<a class="dropdown-item" href="./DailyPunctuality-Airports.html"> Airports</a>
+				</div>
+			</li>
+			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Operated Schedules %</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="./DailyOperatedSchedules-Airports.html"> Airports</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container-fluid">
+	<!-- <marquee width="101%" direction="left" loop="1" bgcolor="LightGrey"> -->
+		<!-- <img src="Pictures/ec-color-print.jpg" width="25" height="25"> <strong>14 July 2022: New feature!!!</strong> New webpages on daily punctuality at <a href="https://www.eurocontrol.int/Economics/DailyPunctuality-States.html">State</a> and <a href="https://www.eurocontrol.int/Economics/DailyPunctuality-Airports.html">Airport</a> levels as well as at our <a href="https://ansperformance.eu/traffic/punctuality/">summary page</a>. The definition of indicators can be found using the "About" button. Download xls files of underlying data using the "Download" button. This data is published by EUROCONTROL as is in the interest of the exchange of information. It may be copied in whole or in part providing that the copyright notice and disclaimer are included.  -->
+	<!-- </marquee> -->
+
+
+	<table>
+	  <tr>
+		<td align="center">
+			<h2>States (based on FIRs)</h2>
+			<h4>Overview of the evolution of<br> departures, arrivals, internal and overflights<br>since 1 January 2023</h4>
+			<br>
+			<form style="position: relative; display: inline" >
+			<strong> Metric: &nbsp &nbsp</strong> 
+				<input style="display: inline" type="radio" name="EvolutionSelector" id="RadioButton1" onchange="SelectMetric();" value="Daily" checked> Daily flights &nbsp &nbsp &nbsp &nbsp
+				<input style="display: inline" type="radio" name="EvolutionSelector" id="RadioButton2" onchange="SelectMetric();" value="Average" > 7-day average daily flights
+			</form> 
+			<br><br>
+			<strong>
+			<p style="color:Blue;display: inline">Departures&nbsp &nbsp</p>
+			<p style="color:Red;display: inline">Arrivals&nbsp &nbsp</p>
+			<p style="color:Green;display: inline">Internals&nbsp &nbsp</p>
+			<p style="color:Orange;display: inline">Overflights</p>
+			</strong>
+		</td>
+		<td><div id="Albania_div"></div></td>
+		<td><div id="Armenia_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Austria_div"></div></td>
+		<td><div id="BelgiumLuxembourg_div"></div></td>
+		<td><div id="BosniaHerzegovina_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Bulgaria_div"></div></td>
+		<td><div id="Croatia_div"></div></td>
+		<td><div id="Cyprus_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="CzechRepublic_div"></div></td>
+		<td><div id="Denmark_div"></div></td>
+		<td><div id="Estonia_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Finland_div"></div></td>
+		<td><div id="France_div"></div></td>
+		<td><div id="Georgia_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Germany_div"></div></td>
+		<td><div id="Greece_div"></div></td>
+		<td><div id="Hungary_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Ireland_div"></div></td>
+		<td><div id="Israel_div"></div></td>
+		<td><div id="Italy_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Latvia_div"></div></td>
+		<td><div id="Lithuania_div"></div></td>
+		<td><div id="Malta_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Moldova_div"></div></td>
+		<td><div id="Morocco_div"></div></td>
+		<td><div id="Netherlands_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="NorthMacedonia_div"></div></td>
+		<td><div id="Norway_div"></div></td>
+		<td><div id="Poland_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Portugal_div"></div></td>
+		<td><div id="Romania_div"></div></td>
+		<td><div id="SerbiaMontenegro_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Slovakia_div"></div></td>
+		<td><div id="Slovenia_div"></div></td>
+		<td><div id="Spain_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Sweden_div"></div></td>
+		<td><div id="Switzerland_div"></div></td>
+		<td><div id="Turkey_div"></div></td>
+	  </tr>
+	  <tr>
+		<td><div id="Ukraine_div"></div></td>
+		<td><div id="UnitedKingdom_div"></div></td>
+	  </tr>
+	</table>
+</div>
+</body>
+
+<footer id=footer class="text-center text-muted">
+	<br>
+    &copy; 2024&nbsp;EUROCONTROL &nbsp; &mdash; &nbsp;
+    <a href=https://ansperformance.eu/about/disclaimer/>Disclaimer</a>
+	&mdash;
+    <a href=https://www.eurocontrol.int/info/privacy-and-website-terms-use target=_blank>Privacy statement</a>
+	&mdash;
+    <span>
+      <a href="https://www.eurocontrol.int/form/aviation-intelligence-unit-aiu-newsletter">Subscribe to our Newsletter <i class="fas fa-envelope"></i></a>
+    </span>
+</footer>
+
+</html>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+		var SelectedStartDate = new Date(2022,0,1,0,0,0,0);
+</script>
+
+<script type="text/javascript">
+		var Data;
+		
+		var MyEntityView;
+		var MyEntityView1;
+		var MyEntityChart;
+
+		var MyWidthCharts = 650; //365*2;
+		var MyHeightCharts = 300; //150*2;
+		
+		var hAxisTextPosition = 'out';
+		var CharAreaHeight = '70%';
+
+		var SelectedEntity;
+//		var SelectedMetric="Daily";
+		
+		var MyTable1;
+
+		if (document.getElementById('RadioButton1').checked) SelectedMetric= "Daily"; else SelectedMetric= "Average";
+
+		if (window.innerWidth >1200) {
+			MyWidthCharts = window.innerWidth*0.315;
+		}
+
+		function ResizeWindow() {
+			if (window.innerWidth >1200) {
+				MyWidthCharts = window.innerWidth*0.315;
+			}
+			else {
+				MyWidthCharts = 1200*0.315;
+			}
+			drawDashboard();
+		}
+		
+		google.load('visualization', '1.0', {'packages':['corechart', 'table', 'controls']});
+		google.setOnLoadCallback(Initialisation);
+
+		function SelectMetric(){
+			if (document.getElementById('RadioButton1').checked) SelectedMetric= "Daily";
+			if (document.getElementById('RadioButton2').checked) SelectedMetric= "Average";
+			drawDashboard();
+		};
+
+		function Initialisation() {
+			var request = new XMLHttpRequest();
+			request.open("GET", "tfc_daio_ct_data.json", false);
+			request.send(null)
+			var oscardata = JSON.parse(request.responseText);
+
+			Datastring = google.visualization.arrayToDataTable(oscardata);
+
+			Data = new google.visualization.DataTable();
+
+			for(j = 0; j < Datastring.getNumberOfColumns(); j++) {
+				Data.addColumn(Datastring.getValue(0,j), Datastring.getColumnLabel(j));
+				// alert(Datastring.getValue(0,j))
+			}
+
+			Datastring.removeRow(0)
+			Data.addRows(Datastring.getNumberOfRows());
+
+			// alert(Datastring.getNumberOfRows() + "/" + Data.getNumberOfRows() );
+
+			for(j = 0; j < Data.getNumberOfColumns(); j++) {
+
+				if (Data.getColumnType(j) == 'number') {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j, Number (Datastring.getValue(i,j)));
+					}
+				}
+				else if (Data.getColumnType(j) == 'date') {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j, new Date(Datastring.getValue(i,j)));
+					}
+				}
+				else {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j,Datastring.getValue(i,j));
+					}
+				}
+
+			}
+			
+			var FormatterInteger = new google.visualization.NumberFormat({pattern:'0'});
+			FormatterInteger.format(Data, 6);
+			FormatterInteger.format(Data, 7);
+			FormatterInteger.format(Data, 8);
+			FormatterInteger.format(Data, 9);
+
+			drawDashboard();
+		}
+		function drawDashboard() {
+			if (document.getElementById('RadioButton1').checked) SelectedMetric= "Daily";
+			if (document.getElementById('RadioButton2').checked) SelectedMetric= "Average";
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Albania";
+			var MyChartAlbania = new google.visualization.ComboChart(document.getElementById('Albania_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+			
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartAlbania.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Armenia";
+			var MyChartArmenia = new google.visualization.ComboChart(document.getElementById('Armenia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartArmenia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Austria";
+			var MyChartAustria = new google.visualization.ComboChart(document.getElementById('Austria_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartAustria.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Belgium and Luxembourg";
+			var MyChartBelgiumLuxembourg = new google.visualization.ComboChart(document.getElementById('BelgiumLuxembourg_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartBelgiumLuxembourg.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Bosnia-Herzegovina";
+			var MyChartBosniaHerzegovina = new google.visualization.ComboChart(document.getElementById('BosniaHerzegovina_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartBosniaHerzegovina.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Bulgaria";
+			var MyChartBulgaria = new google.visualization.ComboChart(document.getElementById('Bulgaria_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartBulgaria.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Croatia";
+			var MyChartCroatia = new google.visualization.ComboChart(document.getElementById('Croatia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartCroatia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Cyprus";
+			var MyChartCyprus = new google.visualization.ComboChart(document.getElementById('Cyprus_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartCyprus.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Czech Republic";
+			var MyChartCzechRepublic = new google.visualization.ComboChart(document.getElementById('CzechRepublic_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartCzechRepublic.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Denmark";
+			var MyChartDenmark = new google.visualization.ComboChart(document.getElementById('Denmark_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartDenmark.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Estonia";
+			var MyChartEstonia = new google.visualization.ComboChart(document.getElementById('Estonia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartEstonia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Finland";
+			var MyChartFinland = new google.visualization.ComboChart(document.getElementById('Finland_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartFinland.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="France";
+			var MyChartFrance = new google.visualization.ComboChart(document.getElementById('France_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartFrance.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Georgia";
+			var MyChartGeorgia = new google.visualization.ComboChart(document.getElementById('Georgia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartGeorgia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Germany";
+			var MyChartGermany = new google.visualization.ComboChart(document.getElementById('Germany_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartGermany.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Greece";
+			var MyChartGreece = new google.visualization.ComboChart(document.getElementById('Greece_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartGreece.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Hungary";
+			var MyChartHungary = new google.visualization.ComboChart(document.getElementById('Hungary_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartHungary.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Ireland";
+			var MyChartIreland = new google.visualization.ComboChart(document.getElementById('Ireland_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartIreland.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Israel";
+			var MyChartIsrael = new google.visualization.ComboChart(document.getElementById('Israel_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartIsrael.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Italy";
+			var MyChartItaly = new google.visualization.ComboChart(document.getElementById('Italy_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartItaly.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Latvia";
+			var MyChartLatvia = new google.visualization.ComboChart(document.getElementById('Latvia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartLatvia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Lithuania";
+			var MyChartLithuania = new google.visualization.ComboChart(document.getElementById('Lithuania_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartLithuania.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Malta";
+			var MyChartMalta = new google.visualization.ComboChart(document.getElementById('Malta_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartMalta.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Moldova";
+			var MyChartMoldova = new google.visualization.ComboChart(document.getElementById('Moldova_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartMoldova.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Morocco";
+			var MyChartMorocco = new google.visualization.ComboChart(document.getElementById('Morocco_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartMorocco.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Netherlands";
+			var MyChartNetherlands = new google.visualization.ComboChart(document.getElementById('Netherlands_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartNetherlands.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="North Macedonia";
+			var MyChartNorthMacedonia = new google.visualization.ComboChart(document.getElementById('NorthMacedonia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartNorthMacedonia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Norway";
+			var MyChartNorway = new google.visualization.ComboChart(document.getElementById('Norway_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartNorway.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Poland";
+			var MyChartPoland = new google.visualization.ComboChart(document.getElementById('Poland_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartPoland.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Portugal";
+			var MyChartPortugal = new google.visualization.ComboChart(document.getElementById('Portugal_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartPortugal.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Romania";
+			var MyChartRomania = new google.visualization.ComboChart(document.getElementById('Romania_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartRomania.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Serbia & Montenegro";
+			var MyChartSerbiaMontenegro = new google.visualization.ComboChart(document.getElementById('SerbiaMontenegro_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartSerbiaMontenegro.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Slovakia";
+			var MyChartSlovakia = new google.visualization.ComboChart(document.getElementById('Slovakia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartSlovakia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Slovenia";
+			var MyChartSlovenia = new google.visualization.ComboChart(document.getElementById('Slovenia_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartSlovenia.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Spain";
+			var MyChartSpain = new google.visualization.ComboChart(document.getElementById('Spain_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartSpain.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Sweden";
+			var MyChartSweden = new google.visualization.ComboChart(document.getElementById('Sweden_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartSweden.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Switzerland";
+			var MyChartSwitzerland = new google.visualization.ComboChart(document.getElementById('Switzerland_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartSwitzerland.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Türkiye";
+			var MyChartTurkey = new google.visualization.ComboChart(document.getElementById('Turkey_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartTurkey.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="Ukraine";
+			var MyChartUkraine = new google.visualization.ComboChart(document.getElementById('Ukraine_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartUkraine.draw(MyEntityView,optionsMyEntityChart);
+
+//________________________________________________________________________________________________________
+			SelectedEntity="United Kingdom";
+			var MyChartUnitedKingdom = new google.visualization.ComboChart(document.getElementById('UnitedKingdom_div'));
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedEntity}]));
+			if (SelectedMetric == "Daily") MyEntityView.setColumns([1,2,3,4,5]); else MyEntityView.setColumns([1,6,7,8,9]);
+
+			var	optionsMyEntityChart = {
+				title: SelectedEntity,
+				titlePosition: 'out',
+				titleTextStyle: {color: 'White'},
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				backgroundColor: '#000044',
+				pointSize: 3,
+				series: {
+					0: {type:'line',color:'Blue', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line',color:'Red', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					2: {type:'line',color:'Green', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+					3: {type:'line',color:'Orange', pointSize: 3, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'dd MMM',
+					textPosition: hAxisTextPosition,
+					textStyle: {fontSize: 12,color: 'White'},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					gridlines: {count: MyEntityView.getNumberOfRows()},
+				},
+				vAxis: {
+					textStyle: {fontSize: 12,color: 'White'},
+				},
+				vAxes: {
+					0: {format: '#,###'},
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:40,
+					top:40,
+					width:'85%',
+					height:'65%',
+//					height:CharAreaHeight
+				},
+			};
+			MyChartUnitedKingdom.draw(MyEntityView,optionsMyEntityChart);
+		}
+</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ3R0C35X7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJ3R0C35X7');
+</script>

@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Balanced Scorecard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.7.2/css/all.css integrity=sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr crossorigin=anonymous>
+</head>
+
+<body>
+
+<style>
+	table, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		background-color: White;
+		padding: 5px;
+		align: middle;    
+	}
+</style>
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top"> -->
+	<!-- <a href="http://www.eurocontrol.int/"><img src="Pictures/Eurocontrol_logo_2010.svg" style="float:left" class="img" alt="Eurocontrol" width="50" height="50"></a> -->
+    <a href="http://www.eurocontrol.int/"><img src="Pictures/ec-color-print.jpg" style="float:left" class="img" alt="Eurocontrol" width="50" height="50"></a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle navbar-brand" href="#" id="navbardrop" data-toggle="dropdown"><i class="far fa-star fa-spin fa-fw"></i> Aviation Intelligence</a>
+				<div class=dropdown-menu>
+					<a class=dropdown-item href=https://ansperformance.eu/><i class="fas fa-home"></i><span>&nbsp;<strong>Home</strong></span></a>
+
+					<a class=dropdown-item href=https://www.eurocontrol.int/Economics/BalancedScorecard.html><i class="fas fa-th"></i><span>&nbsp <strong>Balanced Scorecard</strong></span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/traffic/><i class="fas fa-plane-departure"></i><span>&nbsp <strong>Traffic</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html><i class="far fa-star fa-spin fa-fw"></i><span> Daily Traffic Variation & Restart </span><i class="far fa-star fa-spin fa-fw"></i></a>
+					<a class=dropdown-item href=https://ansperformance.eu/traffic/statfor/><span>&nbsp &nbsp &nbsp Traffic Forecast</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/><i class="fas fa-leaf"></i><span>&nbsp <strong>Efficiency & Environment</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/hfe/><span>&nbsp &nbsp &nbsp Horizontal Flight Efficiency</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/vfe/><span>&nbsp &nbsp &nbsp Vertical Flight Efficiency</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/asma/><span>&nbsp &nbsp &nbsp Terminal Holdings</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/taxiout/><span>&nbsp &nbsp &nbsp Taxi-out</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/economics/><i class="fas fa-euro-sign"></i><span>&nbsp &nbsp <strong>Economics</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteMainDashboard.html><span>&nbsp &nbsp &nbsp Service Units</span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteUnitRates.html><span>&nbsp &nbsp &nbsp Unit Rates and Costs</span></a>
+ 					<a class=dropdown-item href=https://www.eurocontrol.int/ACE><span>&nbsp &nbsp &nbsp ATM Cost Effectiveness</span></a>
+ 					<a class=dropdown-item href=https://ansperformance.eu/economics/finance/><span>&nbsp &nbsp &nbsp ANSPs Financial Situation</span></a>
+ 					<a class=dropdown-item href=https://ansperformance.eu/economics/cba/><span>&nbsp &nbsp &nbsp CBA</span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-user-friends"></i><span> <strong>Stakeholder views</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/airport/><span>&nbsp &nbsp &nbsp Airport View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/ansp/><span>&nbsp &nbsp &nbsp ANSP View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/fab/><span>&nbsp &nbsp &nbsp FAB View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/state/><span>&nbsp &nbsp &nbsp State View</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/publications/><i class="fas fa-book"></i><span>&nbsp <strong>Publications</strong></span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/data/><i class="fas fa-database"></i><span>&nbsp <strong>Data</strong></span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-hands-helping"></i><span> <strong>Reference</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/study/><span>&nbsp &nbsp &nbsp Studies</span></a>
+				
+					<a class=dropdown-item href=https://ansperformance.eu/definition/><span>&nbsp &nbsp &nbsp Definitions</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/methodology/><span>&nbsp &nbsp &nbsp Methodology</span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-external-link-alt"></i><span>&nbsp <strong>External</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/prudata/dashboard/><i class="fas "></i><span>&nbsp &nbsp &nbsp Single European Sky Portal</span></a>
+					<a class=dropdown-item href=https://www4.icao.int/ganpportal/><i class="fas "></i><span>&nbsp &nbsp &nbsp ICAO GANP</span></a>
+
+				</div>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#"> Balance ScoreCard<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Traffic Variation </a>
+				<div class="dropdown-menu">
+					<strong>&nbsp States</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-States.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-States.html"> Overview of the evolution</a>
+
+					<strong>&nbsp ACCs</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-ACCs.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-ACCs.html"> Overview of the evolution</a>
+
+					<strong>&nbsp Airports</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-Airports.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-Airports.html"> Overview of the evolution</a>
+
+					<strong>&nbsp Aircraft Operators</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-AOs.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-AOs.html"> Overview of the evolution</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Punctuality Variation</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="./DailyPunctuality-States.html"> States</a>
+					<a class="dropdown-item" href="./DailyPunctuality-Airports.html"> Airports</a>
+				</div>
+			</li>
+			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Operated Schedules %</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="./DailyOperatedSchedules-Airports.html"> Airports</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+	
+<body>
+	<style>
+		font-family: Arial;
+		font-size: 20px;
+	</style>
+
+	<div class="container-fluid">
+	<marquee width="101%" direction="left" loop="3" bgcolor="LightGrey">
+		<!-- <img src="Pictures/ec-color-print.jpg" width="25" height="25"> -->
+		<strong>July 2024: New!!!</strong> Download version 2 of our  EUROCONTROL DATA app (on <a href="https://apps.apple.com/us/app/eurocontrol-data/id6467232405">Apple App Store</a> & <a href="https://play.google.com/store/search?q=eurocontrol%20data&c=apps&hl=en&gl=US">Google Play Store</a>) which now provides a new State view for each of the 41 EUROCONTROL Member States. This application allows you to get in your pocket the very latest European aviation network data, up to date to the previous day. 
+	</marquee>
+
+
+		<table border="1">
+			<tr>
+				<td align='center' valign='top' rowspan="3" style='background-color: Azure; color: MidnightBlue'>
+
+					<div id="ANSP_filter_div"></div>
+					<div id="Year_filter_div"></div>
+					<div id="Month_filter_div"></div>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='font-size: 20px; background-color: MidnightBlue' onclick='ClickOnANSPName()'>
+						<div style='font-size: 25px' id='ANSPName_div'></div>
+						<div style='font-size: 20px' id="Period_div"></div>
+					</button>
+					<br>
+					
+					<h2 style='width:350px'>Flights</h2>
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: RoyalBlue' onclick='ClickOnEnRouteFlights()'>
+						<div style='font-size: 40px' id="EnRouteFlights_div"></div>
+						<div style='font-size: 20px'>number of flights</div>
+						<div id="VariationEnRouteFlights_div"></div>
+					</button>
+					<br>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: RoyalBlue' onclick='ClickOnEnRouteFlightsPerDay()'>
+						<div style='font-size: 40px' id="EnRouteFlightPerDay_div"></div>
+						<div style='font-size: 20px'>average number of flights per day</div>
+						<div id="VariationEnRouteFlightsPerDay_div"></div>
+					</button>
+					<br>
+
+					<h2>En-route ATFM Delays</h2>
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: MidnightBlue' onclick='ClickOnEnRouteATFMDelays()'>
+						<div style='font-size: 40px' id="EnRouteATFMDelays_div"></div>
+						<div style='font-size: 20px'>en-route ATFM delay</div>
+						<div id="VariationEnRouteATFMDelays_div"></div>
+					</button>
+					<br>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: MidnightBlue' onclick='ClickOnShareOfDelayedFlights()'>
+						<div style='font-size: 40px' id="SharedDelayedFlights_div"></div>
+						<div style='font-size: 20px'>en-route ATFM delayed flights</div>
+						<div id="VariationEnRouteATFMDelayedFlights_div"></div>
+					</button>
+					<br>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: MidnightBlue' onclick='ClickOnEnRouteATFMDelaysPerFlight()'>
+						<div style='font-size: 40px' id="EnRouteATFMDelayPerFlight_div"></div>
+						<div style='font-size: 20px'>en-route ATFM delay per flight</div>
+						<div id="VariationEnRouteATFMDelayPerFlight_div"></div>
+					</button>
+					<br>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: MidnightBlue' onclick='ClickOnEnRouteATFMDelaysPerDelayedFlight()'>
+						<div style='font-size: 40px' id="EnRouteATFMDelayPerDelayedFlight_div"></div>
+						<div style='font-size: 20px'>en-route ATFM delay<br>per delayed flight</div>
+						<div id="VariationEnRouteATFMDelayPerDelayedFlight_div"></div>
+					</button>
+					<br>
+
+				</td>
+				<td height="40" colspan="3">
+					<div style='float:left; padding-top: 5px; padding-left: 10px; padding-right: 30px' id="Metric_filter_div"></div>
+					<button style='float:left; padding-top: 5px;' onclick="myFunction()">Copy all images</button>
+				</td>
+			</tr>
+			<tr>	
+				<td colspan="3">
+<!--					<button style="position:relative; top:10px; left:10px;" onclick="myFunction()">Copy Image</button>-->
+					<div id="ChartANSPsYearYTD_div"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="ChartANSPYearsYTD_div"></div>
+				</td>
+				<td>
+					<div id="ChartANSPMonths_div"></div> 
+				</td>
+				<td>
+					<div id="ChartACCsANSPYearsYTD_div"></div>
+				</td>
+			<tr>
+			</tr>
+				<td align='center' valign='top' style='background-color: Beige; color: Brown'>
+					<h2>En-route Service Units</h2>
+					<div style='font-size: 20px; color: Brown' id='EnRouteChargingZone_div'></div>
+					<br>
+					
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: Coral' onclick='ClickOnMonthlyVariationSU()'>
+						<div style='font-size: 40px' id="VariationEnRouteServiceUnitsMonthly_div"></div>
+						<div style='font-size: 20px'>monthly variation</div> 
+						<div id="PeriodVariationEnRouteServiceUnitsMonthly_div"></div>
+					</button>
+					<br>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: Coral' onclick='ClickOnYTDVariationSU()'>
+						<div style='font-size: 40px' id="VariationEnRouteServiceUnitsMonthlyYTD_div"></div>
+						<div style='font-size: 20px'>YTD variation</div>
+						<div id="PeriodVariationEnRouteServiceUnitsMonthlyYTD_div"></div>
+					</button>
+					<br>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" style='background-color: Coral'onclick='ClickOnYTDVariationSUVsPlan()' >
+						<div style='font-size: 40px' id="VariationEnRouteServiceUnitsMonthlyYTDPlan_div"></div>
+						<div style='font-size: 20px'>YTD variation against plan</div>
+						<div id="PeriodVariationEnRouteServiceUnitsMonthlyYTDPlan_div"></div>
+					</button>
+				</td>
+				<td height="40" colspan="3">
+					<div style='text-align: left; height: 40px; padding-top: 10px; padding-left: 10px' id="pickerSUMetric_div"></div>
+					<div id="Table1_div"></div>
+					<div id='chartEnRouteSUMonthly_div'></div>
+					<div style='float:left;' id='chartEnRouteSUAnnualEvolution_div'></div>
+					<div style='float:left;' id='chartEnRouteSUMonthlyEvolution_div'></div>
+				</td>
+			</tr>
+		</table>	
+	</div>
+</body>
+
+<footer id=footer class="text-center text-muted">
+	<br>
+    &copy; 2024&nbsp;EUROCONTROL &nbsp; &mdash; &nbsp;
+    <a href=https://ansperformance.eu/about/disclaimer/>Disclaimer</a>
+	&mdash;
+    <a href=https://www.eurocontrol.int/info/privacy-and-website-terms-use target=_blank>Privacy statement</a>
+	&mdash;
+    <span>
+      <a href="https://www.eurocontrol.int/form/aviation-intelligence-unit-aiu-newsletter">Subscribe to our Newsletter <i class="fas fa-envelope"></i></a>
+    </span>
+</footer>
+
+</html>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	var LastAvailableYear = 2024;
+	var LastAvailableMonth = 7;
+</script>
+
+<script type="text/javascript">
+	var SelectedANSP = "EUROCONTROL Area (MS)";
+	var SelectedMetric = 'En-Route ATFM delays per cause';
+	var NameMonths = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+	var SelectedSUMetric = 11;
+	var SelectedSUMetricName = 'Year N vs Plan (cumul)';
+	var SelectedChargingZone = 'CRCO-Total';
+	var SelectedYear = LastAvailableYear;
+	var SelectedMonth = LastAvailableMonth;
+	var Mois;
+
+	var ANSP_Picker;
+	var Year_Picker;
+	var Month_Picker;
+	var Metric_Picker;
+	var SUMetric_Picker;
+	
+	var DataANSPYearsYTD;
+	var ViewDataANSPsYearYTD3;
+	var ViewDataACCsANSPYearsYTD;
+
+	var DataANSPMonths;
+	var ViewDataANSPMonths;
+
+	var ChartANSPYearsYTD;
+	var ViewDataANSPYearsYTD;
+	
+	var ChartANSPsYearYTD;
+	var ChartACCsANSPYearsYTD
+	
+	var ChartEnRouteSUMonthly;
+	var ChartEnRouteSUAnnualEvolution;
+	var ChartEnRouteSUMonthlyEvolution;
+	
+	var DataEnRouteServiceUnits;
+	var DataGraphicEnRouteServiceUnits;
+	var DataGraphicEnRouteServiceUnitsAnnualEvolution;
+	var DataGraphicEnRouteServiceUnitsMonthlyEvolution;
+	
+	google.charts.load('current', {'packages':['corechart','table']});
+	google.charts.setOnLoadCallback(drawCallback);
+
+	function drawCallback() {
+		ChartANSPsYearYTD = new google.visualization.ColumnChart(document.getElementById("ChartANSPsYearYTD_div"));
+		google.visualization.events.addListener(ChartANSPsYearYTD, 'select', selectChartANSPsYearYTD);
+
+		ChartANSPYearsYTD = new google.visualization.ColumnChart(document.getElementById("ChartANSPYearsYTD_div"));
+		google.visualization.events.addListener(ChartANSPYearsYTD, 'select', selectChartANSPYearsYTD);
+
+		ChartACCsANSPYearsYTD = new google.visualization.ColumnChart(document.getElementById("ChartACCsANSPYearsYTD_div"));
+
+		ChartANSPMonths = new google.visualization.ColumnChart(document.getElementById("ChartANSPMonths_div"));
+		google.visualization.events.addListener(ChartANSPMonths, 'select', selectChartANSPMonths);
+
+		ChartEnRouteSUMonthly = new google.visualization.ColumnChart(document.getElementById('chartEnRouteSUMonthly_div'));
+		google.visualization.events.addListener(ChartEnRouteSUMonthly, 'select', selectChartEnRouteSUMonthly);
+
+		ChartEnRouteSUAnnualEvolution = new google.visualization.LineChart(document.getElementById('chartEnRouteSUAnnualEvolution_div'));
+		google.visualization.events.addListener(ChartEnRouteSUAnnualEvolution, 'select', selectChartEnRouteSUAnnualEvolution);
+
+		ChartEnRouteSUMonthlyEvolution = new google.visualization.LineChart(document.getElementById('chartEnRouteSUMonthlyEvolution_div'));
+		google.visualization.events.addListener(ChartEnRouteSUMonthlyEvolution, 'select', selectChartEnRouteSUMonthlyEvolution);
+
+		drawVisualization();
+	}
+	
+	function myFunction() {
+		var myWidth = ChartANSPsYearYTD.getChartLayoutInterface().getBoundingBox('chartarea').width*1.3;
+		var myHeight = ChartANSPsYearYTD.getChartLayoutInterface().getBoundingBox('chartarea').height*1.3;
+		var mySize = "width="+myWidth+",height="+myHeight; 
+		
+		var myWindow = window.open("", "MsgWindow", mySize);
+		myWindow.document.write('<img src="' + ChartANSPsYearYTD.getImageURI() + '"><img src="' + ChartANSPYearsYTD.getImageURI() + '"><img src="' + ChartANSPMonths.getImageURI() + '"><img src="' + ChartACCsANSPYearsYTD.getImageURI() + '"><img src="' + ChartEnRouteSUMonthly.getImageURI() + '"><img src="' + ChartEnRouteSUAnnualEvolution.getImageURI() + '"><img src="' + ChartEnRouteSUMonthlyEvolution.getImageURI() + '">');
+		
+//	    var csv = google.visualization.dataTableToCsv(ViewDataANSPsYearYTD3);
+//		console.log(csv);
+
+	}
+	
+	function ClickOnGetANSPName(){
+		SelectedANSP = $('#sel1').find("option:selected").text();
+//		SelectedMetric = "En-Route ATFM delays per cause";
+		drawVisualization();
+	}
+	
+	function ClickOnANSPName(){
+		SelectedMetric = "En-Route ATFM delays per cause";
+		drawVisualization();
+	}
+	
+/*	function ClickOnDates() {
+		SelectedMetric = "En-Route ATFM delays per cause";
+		drawVisualization();
+	}*/
+	
+	function ClickOnEnRouteFlights() {
+		SelectedMetric = "Number of flights";
+		drawVisualization();
+	}
+	
+	function ClickOnEnRouteFlightsPerDay() {
+		SelectedMetric = "Average number of flights per day";
+		drawVisualization();
+	}
+	
+	function ClickOnEnRouteATFMDelays() {
+		SelectedMetric = "En-Route ATFM delays";
+		drawVisualization();
+	}
+
+	function ClickOnShareOfDelayedFlights() {
+		SelectedMetric = "Share of delayed flights";
+		drawVisualization();
+	}
+
+	function ClickOnEnRouteATFMDelaysPerFlight() {
+		SelectedMetric = "En-Route ATFM delays per flight";
+		drawVisualization();
+	}
+
+	function ClickOnEnRouteATFMDelaysPerDelayedFlight() {
+		SelectedMetric = "En-Route ATFM delays per delayed flight";
+		drawVisualization();
+	}
+	
+	function ClickOnMonthlyVariationSU() {
+		SelectedSUMetricName = 'Year N vs Year N-1 (monthly)';
+		SelectedSUMetric = 14;
+		drawVisualization();
+	}
+
+	function ClickOnYTDVariationSU() {
+		SelectedSUMetricName = 'Year N vs Year N-1 (cumul)';
+		SelectedSUMetric = 15;
+		drawVisualization();
+	}
+
+	function ClickOnYTDVariationSUVsPlan() {
+		SelectedSUMetricName = 'Year N vs Plan (cumul)';
+		SelectedSUMetric = 11;
+		drawVisualization();
+	}
+
+	
+	function selectChartEnRouteSUMonthly() {
+		if(ChartEnRouteSUMonthly.getSelection() != "") {
+			SelectedChargingZone = DataGraphicEnRouteServiceUnits.getValue(ChartEnRouteSUMonthly.getSelection()[0].row, 0);
+
+			if (SelectedChargingZone == 'Albania') SelectedANSP = 'Albcontrol';
+			if (SelectedChargingZone == 'Czech republic') SelectedANSP = 'ANS CR';
+			if (SelectedChargingZone == 'Finland') SelectedANSP = 'Fintraffic ANS';
+			if (SelectedChargingZone == 'Armenia') SelectedANSP = 'ARMATS';
+			if (SelectedChargingZone == 'Austria') SelectedANSP = 'Austro Control';
+			if (SelectedChargingZone == 'Norway') SelectedANSP = 'Avinor';
+			if (SelectedChargingZone == 'Bulgaria') SelectedANSP = 'BULATSA';
+			if (SelectedChargingZone == 'Croatia') SelectedANSP = 'Croatia Control';
+			if (SelectedChargingZone == 'Cyprus') SelectedANSP = 'DCAC Cyprus';
+			if (SelectedChargingZone == 'Germany') SelectedANSP = 'DFS';
+			if (SelectedChargingZone == 'Turkey') SelectedANSP = 'DHMI';
+			if (SelectedChargingZone == 'France') SelectedANSP = 'DSNA';
+			if (SelectedChargingZone == 'Estonia') SelectedANSP = 'EANS';
+			if (SelectedChargingZone == 'Spain continental') SelectedANSP = 'ENAIRE';
+			if (SelectedChargingZone == 'Spain canarias') SelectedANSP = 'ENAIRE';
+			if (SelectedChargingZone == 'Italy') SelectedANSP = 'ENAV';
+			if (SelectedChargingZone == 'CRCO-Total') SelectedANSP = 'EUROCONTROL Area (MS)';
+			if (SelectedChargingZone == 'Greece') SelectedANSP = 'HCAA';
+			if (SelectedChargingZone == 'Hungary') SelectedANSP = 'HungaroControl (EC)';
+			if (SelectedChargingZone == 'Ireland') SelectedANSP = 'AirNav Ireland';
+			if (SelectedChargingZone == 'Sweden') SelectedANSP = 'LFV';
+			if (SelectedChargingZone == 'Latvia') SelectedANSP = 'LGS';
+			if (SelectedChargingZone == 'Slovak republic') SelectedANSP = 'LPS';
+			if (SelectedChargingZone == 'Netherlands') SelectedANSP = 'LVNL';
+			if (SelectedChargingZone == 'Malta') SelectedANSP = 'MATS';
+			if (SelectedChargingZone == 'North Macedonia') SelectedANSP = 'M-NAV';
+			if (SelectedChargingZone == 'Moldova') SelectedANSP = 'MoldATSA';
+			if (SelectedChargingZone == 'United Kingdom') SelectedANSP = 'NATS (Continental)';
+			if (SelectedChargingZone == 'Portugal Lisbon') SelectedANSP = 'NAV Portugal (Continental)';
+			if (SelectedChargingZone == 'Portugal Santa Maria') SelectedANSP = 'NAV Portugal (Continental)';
+			if (SelectedChargingZone == 'Denmark') SelectedANSP = 'NAVIAIR';
+			if (SelectedChargingZone == 'Lithuania') SelectedANSP = 'Oro Navigacija';
+			if (SelectedChargingZone == 'Poland') SelectedANSP = 'PANSA';
+			if (SelectedChargingZone == 'Romania') SelectedANSP = 'ROMATSA';
+			if (SelectedChargingZone == 'Georgia') SelectedANSP = 'Sakaeronavigatsia';
+			if (SelectedChargingZone == 'Belgium/Lux') SelectedANSP = 'skeyes';
+			if (SelectedChargingZone == 'Switzerland') SelectedANSP = 'Skyguide';
+			if (SelectedChargingZone == 'Slovenia') SelectedANSP = 'Slovenia Control';
+			if (SelectedChargingZone == 'Serbia Montenegro KFOR') SelectedANSP = 'SMATSA';
+
+			drawVisualization();
+		};
+	};
+
+	function selectChartEnRouteSUAnnualEvolution() {
+		if(ChartEnRouteSUAnnualEvolution.getSelection() != "") {
+			SelectedYear = DataGraphicEnRouteServiceUnitsAnnualEvolution.getValue(ChartEnRouteSUAnnualEvolution.getSelection()[0].row, 0);
+			
+			drawVisualization();
+		};
+	};
+
+	function selectChartEnRouteSUMonthlyEvolution() {
+		if(ChartEnRouteSUMonthlyEvolution.getSelection() != "") {
+			Mois = DataGraphicEnRouteServiceUnitsMonthlyEvolution.getValue(ChartEnRouteSUMonthlyEvolution.getSelection()[0].row, 0);
+			
+			if (Mois=="January") SelectedMonth = 1;
+			if (Mois=="February") SelectedMonth = 2;
+			if (Mois=="March") SelectedMonth = 3;
+			if (Mois=="April") SelectedMonth = 4;
+			if (Mois=="May") SelectedMonth = 5;
+			if (Mois=="June") SelectedMonth = 6;
+			if (Mois=="July") SelectedMonth = 7;
+			if (Mois=="August") SelectedMonth = 8;
+			if (Mois=="September") SelectedMonth = 9;
+			if (Mois=="October") SelectedMonth = 10;
+			if (Mois=="November") SelectedMonth = 11;
+			if (Mois=="December") SelectedMonth = 12;
+			drawVisualization();
+		};
+	};
+
+
+	
+	function selectChartANSPsYearYTD() {
+		if(ChartANSPsYearYTD.getSelection() != "") {
+//			alert('Je passe par ici');
+			SelectedANSP = ViewDataANSPsYearYTD3.getValue(ChartANSPsYearYTD.getSelection()[0].row, 0);
+//			alert(SelectedANSP);
+			var Metric = ViewDataANSPsYearYTD3.getColumnLabel(ChartANSPsYearYTD.getSelection()[0].column);
+			if (Metric == 'Flights') SelectedMetric = "Number of flights";
+			if (Metric == 'Average flights per day') SelectedMetric = "Average number of flights per day";
+			if (Metric == 'Delayed Flights') SelectedMetric = "Number of delayed flights";
+			if (Metric == 'Delays') SelectedMetric = "En-Route ATFM delays";
+			if (Metric == 'En-route delay per flight') SelectedMetric = "En-Route ATFM delays per flight";
+			if (Metric == 'En-route delay per delayed flight') SelectedMetric = "En-Route ATFM delays per delayed flight";
+			if (Metric == 'Capacity (ATC)') SelectedMetric = "En-Route ATFM delays - Capacity (ATC)";
+			if (Metric == 'Staffing (ATC)') SelectedMetric = "En-Route ATFM delays - Staffing (ATC)";
+			if (Metric == 'Disruptions (ATC)') SelectedMetric = "En-Route ATFM delays - Disruptions (ATC)";
+			if (Metric == 'Weather') SelectedMetric = "En-Route ATFM delays - Weather";
+			if (Metric == 'Other') SelectedMetric = "En-Route ATFM delays - Other";
+//			alert(Metric);
+//			alert(SelectedMetric);
+			drawVisualization();
+		}
+	}		
+
+	function selectChartANSPYearsYTD() {
+		if(ChartANSPYearsYTD.getSelection() != "") {
+			SelectedYear = ViewDataANSPYearsYTD.getValue(ChartANSPYearsYTD.getSelection()[0].row, 0);
+			var Metric = ViewDataANSPYearsYTD.getColumnLabel(ChartANSPYearsYTD.getSelection()[0].column);
+			if (Metric == 'Flights') SelectedMetric = "Number of flights";
+			if (Metric == 'Average flights per day') SelectedMetric = "Average number of flights per day";
+			if (Metric == 'Delayed Flights') SelectedMetric = "Number of delayed flights";
+			if (Metric == 'Delays') SelectedMetric = "En-Route ATFM delays";
+			if (Metric == 'En-route delay per flight') SelectedMetric = "En-Route ATFM delays per flight";
+			if (Metric == 'En-route delay per delayed flight') SelectedMetric = "En-Route ATFM delays per delayed flight";
+			if (Metric == 'Capacity (ATC)') SelectedMetric = "En-Route ATFM delays - Capacity (ATC)";
+			if (Metric == 'Staffing (ATC)') SelectedMetric = "En-Route ATFM delays - Staffing (ATC)";
+			if (Metric == 'Disruptions (ATC)') SelectedMetric = "En-Route ATFM delays - Disruptions (ATC)";
+			if (Metric == 'Weather') SelectedMetric = "En-Route ATFM delays - Weather";
+			if (Metric == 'Other') SelectedMetric = "En-Route ATFM delays - Other";
+			drawVisualization();
+		}
+	}
+
+	function selectChartANSPMonths() {
+		if(ChartANSPMonths.getSelection() != "") {
+			var Month = ViewDataANSPMonths.getValue(ChartANSPMonths.getSelection()[0].row, 0);
+			for (i=0; i<12 ; i++)
+				if(NameMonths[i] == Month) SelectedMonth = i+1;
+			var Metric = ViewDataANSPMonths.getColumnLabel(ChartANSPMonths.getSelection()[0].column);
+			if (Metric == 'Flights') SelectedMetric = "Number of flights";
+			if (Metric == 'Average flights per day') SelectedMetric = "Average number of flights per day";
+			if (Metric == 'Delayed Flights') SelectedMetric = "Number of delayed flights";
+			if (Metric == 'Delays') SelectedMetric = "En-Route ATFM delays";
+			if (Metric == 'En-route delay per flight') SelectedMetric = "En-Route ATFM delays per flight";
+			if (Metric == 'En-route delay per delayed flight') SelectedMetric = "En-Route ATFM delays per delayed flight";
+			if (Metric == 'Capacity (ATC)') SelectedMetric = "En-Route ATFM delays - Capacity (ATC)";
+			if (Metric == 'Staffing (ATC)') SelectedMetric = "En-Route ATFM delays - Staffing (ATC)";
+			if (Metric == 'Disruptions (ATC)') SelectedMetric = "En-Route ATFM delays - Disruptions (ATC)";
+			if (Metric == 'Weather') SelectedMetric = "En-Route ATFM delays - Weather";
+			if (Metric == 'Other') SelectedMetric = "En-Route ATFM delays - Other";
+			drawVisualization();
+		}
+	}
+	
+	function drawVisualization() {
+		//--------------------------------- ANSP Picker ------------------------------------------------------
+		var dataANSPs = google.visualization.arrayToDataTable([
+			['ANSPs'],
+			['Albcontrol'],
+			['ANS CR'],
+			['Fintraffic ANS'],
+			['ARMATS'],
+			['Austro Control'],
+			['Avinor'],
+			['BULATSA'],
+			['Croatia Control'],
+			['DCAC Cyprus'],
+			['DFS'],
+			['DHMI'],
+			['DSNA'],
+			['EANS'],
+			['ENAIRE'],
+			['ENAV'],
+			['EUROCONTROL Area (MS)'],
+			['HCAA'],
+			['HungaroControl (EC)'],
+			['AirNav Ireland'],
+			['Israel AA'],
+			['LFV'],
+			['LGS'],
+			['LPS'],
+			['LVNL'],
+			['MATS'],
+			['M-NAV'],
+			['MoldATSA'],
+			['MUAC'],
+			['NATS (Continental)'],
+			['NAV Portugal (Continental)'],
+			['NAVIAIR'],
+			['ONDA'],
+			['Oro Navigacija'],
+			['PANSA'],
+			['ROMATSA'],
+			['Sakaeronavigatsia'],
+			['skeyes'],
+			['Skyguide'],
+			['Slovenia Control'],
+			['SMATSA'],
+			['UkSATSE']
+		]);
+
+		ANSP_Picker = new google.visualization.ControlWrapper({
+			controlType: 'CategoryFilter',
+			containerId: 'ANSP_filter_div',
+//			dataSourceUrl: 'https://docs.google.com/spreadsheets/d/1G24H6SUIBbqWLgqg6ImBRQqBMDIH8EEdCcqO6DLh95k/edit?usp=sharing',
+			dataTable: dataANSPs,
+			state: {selectedValues: [SelectedANSP]},
+			options: {
+				filterColumnIndex: 0,
+				ui: {
+					label: 'ANSP:',
+					caption: 'Select the ANSP',
+					labelStacking: 'horizontal',
+					allowTyping: false,
+					allowMultiple: false,
+					sortValues: true,
+					allowNone: false,
+				},
+			}
+		});
+		ANSP_Picker.draw();
+		google.visualization.events.addListener(ANSP_Picker, 'statechange', changeANSP_Picker);		
+		function changeANSP_Picker () {
+			SelectedANSP = ANSP_Picker.getState().selectedValues[0];
+			drawVisualization();
+		};
+		//--------------------------------- Metric Picker ------------------------------------------------------
+		var dataMetrics = google.visualization.arrayToDataTable([
+			['Metric'],
+			['Number of flights'],
+			['Average number of flights per day'],
+			['Number of delayed flights'],
+			['Share of delayed flights'],
+			['En-Route ATFM delays'],
+			['En-Route ATFM delays per cause'],
+			['En-Route ATFM delays per flight'],
+			['En-Route ATFM delays per delayed flight'],
+			['En-Route ATFM delays - Capacity (ATC)'],
+			['En-Route ATFM delays - Staffing (ATC)'],
+			['En-Route ATFM delays - Disruptions (ATC)'],
+			['En-Route ATFM delays - Weather'],
+			['En-Route ATFM delays - Other'],
+		]);
+		
+		Metric_Picker = new google.visualization.ControlWrapper({
+			controlType: 'CategoryFilter',
+			containerId: 'Metric_filter_div',
+			dataTable: dataMetrics,
+			state: {selectedValues: [SelectedMetric]},
+			options: {
+				filterColumnIndex: 0,
+				ui: {
+					label: 'Metric:',
+					caption: 'Select the metric',
+					labelStacking: 'horizontal',
+					allowTyping: false,
+					allowMultiple: false,
+					sortValues: false,
+					allowNone: false,
+				},
+			}
+		});
+		Metric_Picker.draw();
+		google.visualization.events.addListener(Metric_Picker, 'statechange', changeMetric_Picker);		
+		function changeMetric_Picker () {
+			SelectedMetric = Metric_Picker.getState().selectedValues[0];
+			drawVisualization();
+		};
+		//--------------------------------- Year Picker ------------------------------------------------------
+		var dataYears = google.visualization.arrayToDataTable([
+			['Years'],
+			[2016],
+			[2017],
+			[2018],
+			[2019],
+			[2020],
+			[2021],
+			[2022],
+			[2023],
+			[2024]
+		]);
+		Year_Picker = new google.visualization.ControlWrapper({
+			controlType: 'CategoryFilter',
+			containerId: 'Year_filter_div',
+			dataTable: dataYears,
+			state: {selectedValues: [SelectedYear]},
+			options: {
+				filterColumnIndex: 0,
+				ui: {
+					label: 'Year:',
+					caption: 'Select the Year',
+					labelStacking: 'horizontal',
+					allowTyping: false,
+					allowMultiple: false,
+					sortValues: false,
+					allowNone: false,
+				},
+			}
+		});
+		Year_Picker.draw();
+		google.visualization.events.addListener(Year_Picker, 'statechange', changeYear_Picker);		
+		function changeYear_Picker () {
+			SelectedYear = Year_Picker.getState().selectedValues[0];
+			if ((SelectedYear == LastAvailableYear) && (SelectedMonth > LastAvailableMonth)) SelectedMonth = LastAvailableMonth;
+			drawVisualization();
+		};
+		//--------------------------------- Month Picker ------------------------------------------------------
+		var dataMonths = google.visualization.arrayToDataTable([
+			['Months'],
+			[1],
+			[2],
+			[3],
+			[4],
+			[5],
+			[6],
+			[7],
+			[8],
+			[9],
+			[10],
+			[11],
+			[12],
+		]);
+		Month_Picker = new google.visualization.ControlWrapper({
+			controlType: 'CategoryFilter',
+			containerId: 'Month_filter_div',
+			dataTable: dataMonths,
+			state: {selectedValues: [SelectedMonth]},
+			options: {
+				filterColumnIndex: 0,
+				ui: {
+					label: 'Month:',
+					caption: 'Select the Month',
+					labelStacking: 'horizontal',
+					allowTyping: false,
+					allowMultiple: false,
+					sortValues: false,
+					allowNone: false,
+				},
+			}
+		});
+		Month_Picker.draw();
+		google.visualization.events.addListener(Month_Picker, 'statechange', changeMonth_Picker);		
+		function changeMonth_Picker () {
+			var i = Month_Picker.getState().selectedValues[0];
+			if ((i <= LastAvailableMonth) || (SelectedYear < LastAvailableYear)) {
+				SelectedMonth = Month_Picker.getState().selectedValues[0];
+			};
+			drawVisualization();
+		};
+		
+		//--------------------------------- SU Metric Picker ------------------------------------------------------
+		var dataSUMetric = google.visualization.arrayToDataTable([
+			['Metric'],
+			['Year N vs Plan (cumul)'],
+			['Year N vs Year N-1 (cumul)'],
+			['Year N vs Year N-1 (monthly)']
+		]);
+
+		SUMetric_Picker = new google.visualization.ControlWrapper({
+			controlType: 'CategoryFilter',
+			containerId: 'pickerSUMetric_div',
+			state: {selectedValues: [SelectedSUMetricName]},
+			dataTable: dataSUMetric,
+			options: {
+				filterColumnLabel: 'Metric',
+				ui: {
+					label: 'Metric:',
+					labelStacking: 'horizontal',
+					allowTyping: false,
+					allowMultiple: false,
+					sortValues: false,
+				},
+			}
+		});
+//		SUMetric_Picker.draw();
+		google.visualization.events.addListener(SUMetric_Picker, 'statechange', stateChangeSUMetric_Picker);
+        function stateChangeSUMetric_Picker() {
+			SelectedSUMetricName = SUMetric_Picker.getState().selectedValues[0];
+			if (SelectedSUMetricName == 'Year N vs Plan (cumul)') SelectedSUMetric = 10;
+			if (SelectedSUMetricName == 'Year N vs Year N-1 (monthly)') SelectedSUMetric = 13;
+			if (SelectedSUMetricName == 'Year N vs Year N-1 (cumul)') SelectedSUMetric = 14;
+			drawVisualization();
+		};
+
+		if (SelectedMonth == 1) Mois="January";
+		if (SelectedMonth == 2) Mois="February";
+		if (SelectedMonth == 3) Mois="March";
+		if (SelectedMonth == 4) Mois="April";
+		if (SelectedMonth == 5) Mois="May";
+		if (SelectedMonth == 6) Mois="June";
+		if (SelectedMonth == 7) Mois="July";
+		if (SelectedMonth == 8) Mois="August";
+		if (SelectedMonth == 9) Mois="September";
+		if (SelectedMonth == 10) Mois="October";
+		if (SelectedMonth == 11) Mois="November";
+		if (SelectedMonth == 12) Mois="December";
+
+			
+		if (SelectedANSP == 'Albcontrol') SelectedChargingZone= 'Albania';
+		if (SelectedANSP == 'ANS CR') SelectedChargingZone= 'Czech republic';
+		if (SelectedANSP == 'Fintraffic ANS') SelectedChargingZone= 'Finland';
+		if (SelectedANSP == 'ARMATS') SelectedChargingZone= 'Armenia';
+		if (SelectedANSP == 'Austro Control') SelectedChargingZone= 'Austria';
+		if (SelectedANSP == 'Avinor') SelectedChargingZone= 'Norway';
+		if (SelectedANSP == 'BULATSA') SelectedChargingZone= 'Bulgaria';
+		if (SelectedANSP == 'Croatia Control') SelectedChargingZone= 'Croatia';
+		if (SelectedANSP == 'DCAC Cyprus') SelectedChargingZone= 'Cyprus';
+		if (SelectedANSP == 'DFS') SelectedChargingZone= 'Germany';
+		if (SelectedANSP == 'DHMI') SelectedChargingZone= 'Turkey';
+		if (SelectedANSP == 'DSNA') SelectedChargingZone= 'France';
+		if (SelectedANSP == 'EANS') SelectedChargingZone= 'Estonia';
+		if (SelectedANSP == 'ENAIRE') SelectedChargingZone= 'Spain continental';
+		if (SelectedANSP == 'ENAV') SelectedChargingZone= 'Italy';
+		if (SelectedANSP == 'EUROCONTROL Area (MS)') SelectedChargingZone= 'CRCO-Total';
+		if (SelectedANSP == 'HCAA') SelectedChargingZone= 'Greece';
+		if (SelectedANSP == 'HungaroControl (EC)') SelectedChargingZone= 'Hungary';
+		if (SelectedANSP == 'AirNav Ireland') SelectedChargingZone= 'Ireland';
+		if (SelectedANSP == 'LFV') SelectedChargingZone= 'Sweden';
+		if (SelectedANSP == 'LGS') SelectedChargingZone= 'Latvia';
+		if (SelectedANSP == 'LPS') SelectedChargingZone= 'Slovak republic';
+		if (SelectedANSP == 'LVNL') SelectedChargingZone= 'Netherlands';
+		if (SelectedANSP == 'MATS') SelectedChargingZone= 'Malta';
+		if (SelectedANSP == 'Military') SelectedChargingZone= 'CRCO-Total';
+		if (SelectedANSP == 'M-NAV') SelectedChargingZone= 'North Macedonia';
+		if (SelectedANSP == 'MoldATSA') SelectedChargingZone= 'Moldova';
+		if (SelectedANSP == 'MUAC') SelectedChargingZone= 'CRCO-Total';
+		if (SelectedANSP == 'NATS (Continental)') SelectedChargingZone= 'United Kingdom';
+		if (SelectedANSP == 'NAV Portugal (Continental)') SelectedChargingZone= 'Portugal Lisbon';
+		if (SelectedANSP == 'NAVIAIR') SelectedChargingZone= 'Denmark';
+		if (SelectedANSP == 'Oro Navigacija') SelectedChargingZone= 'Lithuania';
+		if (SelectedANSP == 'PANSA') SelectedChargingZone= 'Poland';
+		if (SelectedANSP == 'ROMATSA') SelectedChargingZone= 'Romania';
+		if (SelectedANSP == 'Sakaeronavigatsia') SelectedChargingZone= 'Georgia';
+		if (SelectedANSP == 'skeyes') SelectedChargingZone= 'Belgium/Lux';
+		if (SelectedANSP == 'Skyguide') SelectedChargingZone= 'Switzerland';
+		if (SelectedANSP == 'Slovenia Control') SelectedChargingZone= 'Slovenia';
+		if (SelectedANSP == 'SMATSA') SelectedChargingZone= 'Serbia Montenegro KFOR';
+		if (SelectedANSP == 'UkSATSE') SelectedChargingZone= 'CRCO-Total';
+
+		var query1 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1G24H6SUIBbqWLgqg6ImBRQqBMDIH8EEdCcqO6DLh95k/edit?usp=sharing');
+		query1.setQuery('select A, B, C, D, sum(F), sum(G), sum(H), sum(I), sum(J), sum(K), sum(L), sum(M), sum(N) where (E<='+SelectedMonth+') group by A, B, C, D');
+		query1.send(QueryANSPsYearYTD);
+
+		var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1G24H6SUIBbqWLgqg6ImBRQqBMDIH8EEdCcqO6DLh95k/edit?usp=sharing');
+		query2.setQuery('select E, sum(F), sum(G), sum(H), sum(I), sum(J), sum(K), sum(L), sum(M), sum(N) where ((B="'+SelectedANSP+'") and (C="All") and (D='+ SelectedYear+')) group by B, C, D, E');
+		query2.send(QueryANSPMonths);
+		
+		var query3= new google.visualization.Query('https://docs.google.com/spreadsheets/d/1rpyNgDuSggMXH35nU0EfEEhD3S7T3AL27we2SXs_jS0/edit?usp=sharing');
+		query3.setQuery('select A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W');
+		query3.send(QueryEnRouteServiceUnits);
+
+		
+		function QueryEnRouteServiceUnits(response) {
+			if (response.isError()) {
+				alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+				return;
+			}
+			DataEnRouteServiceUnits = response.getDataTable();
+
+			var Formatter0DecimalsFigure = new google.visualization.NumberFormat({pattern:'#'});
+			Formatter0DecimalsFigure.format(DataEnRouteServiceUnits, 0);
+			Formatter0DecimalsFigure.format(DataEnRouteServiceUnits, 12);
+			Formatter0DecimalsFigure.format(DataEnRouteServiceUnits, 13);
+
+
+			ViewDataEnRouteServiceUnits = new google.visualization.DataView(DataEnRouteServiceUnits);
+			ViewDataEnRouteServiceUnits.setRows(ViewDataEnRouteServiceUnits.getFilteredRows([{column: 0, value: SelectedYear}, {column: 1, value: SelectedChargingZone}, {column: 2, value: Mois}]));
+
+//------------------------------Name of Charging zone--------------------------------------------------------
+			document.getElementById("EnRouteChargingZone_div").innerHTML = '('+ViewDataEnRouteServiceUnits.getValue(0,1)+')';
+//------------------------------Monthly Variation of en-route Service Units----------------------------------
+			var MyArrow;
+			var MyColor;
+			if (ViewDataEnRouteServiceUnits.getValue(0,14)<0) {
+				MyArrow = "glyphicon-arrow-down";
+				MyColor="red";
+				Signe = '';
+			} else {
+				MyArrow = "glyphicon-arrow-up";
+				MyColor="Lime";
+				Signe = '+';
+			};
+			document.getElementById("VariationEnRouteServiceUnitsMonthly_div").innerHTML = '<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+(ViewDataEnRouteServiceUnits.getValue(0,14)*100).toFixed(1)+' %';
+			
+			document.getElementById("PeriodVariationEnRouteServiceUnitsMonthly_div").innerHTML = Mois + " " + SelectedYear + " vs <br>" + Mois + " " + (SelectedYear-1);
+
+//------------------------------Monthly YTD Variation of en-route Service Units----------------------------------
+			var MyArrow;
+			var MyColor;
+			if (ViewDataEnRouteServiceUnits.getValue(0,15)<0) {
+				MyArrow = "glyphicon-arrow-down";
+				MyColor="red";
+				Signe = '';
+			} else {
+				MyArrow = "glyphicon-arrow-up";
+				MyColor="Lime";
+				Signe = '+';
+			};
+			document.getElementById("VariationEnRouteServiceUnitsMonthlyYTD_div").innerHTML = '<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+(ViewDataEnRouteServiceUnits.getValue(0,15)*100).toFixed(1)+' %';
+			
+			document.getElementById("PeriodVariationEnRouteServiceUnitsMonthlyYTD_div").innerHTML = "January - "+Mois + " " + SelectedYear + " vs <br> January - " + Mois + " " + (SelectedYear-1);
+
+//------------------------------Monthly YTD compare to Plan Variation of en-route Service Units----------------------------------
+			var MyArrow;
+			var MyColor;
+			if (ViewDataEnRouteServiceUnits.getValue(0,11)<0) {
+				MyArrow = "glyphicon-arrow-down";
+				MyColor="red";
+				Signe = '';
+			} else {
+				MyArrow = "glyphicon-arrow-up";
+				MyColor="Lime";
+				Signe = '+';
+			};
+			document.getElementById("VariationEnRouteServiceUnitsMonthlyYTDPlan_div").innerHTML = '<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+(ViewDataEnRouteServiceUnits.getValue(0,11)*100).toFixed(1)+' %';
+			
+			document.getElementById("PeriodVariationEnRouteServiceUnitsMonthlyYTDPlan_div").innerHTML = "January - "+Mois + " " + SelectedYear + " vs <br> Plan " + SelectedYear;
+			
+//------------------------------------Graphique SUs geographical breakdown---------------------------------------------------
+			var MyViewMonthly1 = new google.visualization.DataView(DataEnRouteServiceUnits);
+			MyViewMonthly1.setRows(MyViewMonthly1.getFilteredRows([{column: 0, value: SelectedYear},{column: 2, value: Mois}]));
+
+			DataGraphicEnRouteServiceUnits = new google.visualization.DataView(MyViewMonthly1);
+			DataGraphicEnRouteServiceUnits.setColumns([1, SelectedSUMetric, 12, 13]);
+			DataGraphicEnRouteServiceUnits.setRows(DataGraphicEnRouteServiceUnits.getSortedRows([{column: 1, desc: true}]));
+
+/*			var Table1 = new google.visualization.Table(document.getElementById('Table1_div'));
+			Table1.draw(MyViewMonthly1, {showRowNumber: true, width: '100%', height: '100%'});*/
+			
+			var Couleur;
+			var MySUTitle;
+			var YAxisFormat = '0%';
+		
+			if (SelectedSUMetric == 14) {Couleur = 'DodgerBlue'; MySUTitle = "(Monthly variation) (" + Mois + " " + SelectedYear + " vs " + Mois + " " + (SelectedYear-1);}
+			if (SelectedSUMetric == 15) {Couleur = 'blue'; MySUTitle = "(YTD variation) (January - "+Mois + " " + SelectedYear + " vs January - " + Mois + " " + (SelectedYear-1);}
+			if (SelectedSUMetric == 11) {Couleur = 'red'; MySUTitle = "(YTD variation against plan) (January - "+Mois + " " + SelectedYear + " vs Plan " + SelectedYear;}
+		
+			var OptionsEnRouteSUMonthly = {
+				title: 'En-Route Service Units ' + MySUTitle+')',
+				width: 1450,
+				height: 500,
+				bar: {groupWidth: '75%' },
+				series: {
+					0: {color: Couleur},
+					1: {type:'area',color:'grey', lineWidth: 0, visibleInLegend: false},
+					2: {type:'area',color:'grey', lineWidth: 0, visibleInLegend: false},
+				},
+				vAxis: {
+					format: YAxisFormat,
+				},
+				hAxis: {
+					textPosition: 'out',
+					textStyle: {fontSize: 14},
+					slantedText: true,
+					slantedTextAngle: 90,
+				},
+				legend: {
+					position: 'none',
+				},
+				chartArea: {
+					left: 90,
+					top: 50,
+					width: 1450,
+				},
+				animation: {
+					duration: 600,
+					easing: 'inAndOut',
+				},
+			};
+			
+			ChartEnRouteSUMonthly.draw(DataGraphicEnRouteServiceUnits, OptionsEnRouteSUMonthly);
+			SelectChargingZoneInChartEnRouteSUMonthly();
+			function SelectChargingZoneInChartEnRouteSUMonthly() {
+				for(j = 0; j < DataGraphicEnRouteServiceUnits.getNumberOfRows(); j++) {
+					if (DataGraphicEnRouteServiceUnits.getValue(j,0) == SelectedChargingZone) {
+//						alert("Trouv� " + SelectedChargingZone + " en " + j);
+						ChartEnRouteSUMonthly.setSelection([{row: j , column:null}]);
+					}
+				}
+			}
+
+//------------------------------------Graphique SUs annual evolution---------------------------------------------------
+			var MyViewMonthly2 = new google.visualization.DataView(DataEnRouteServiceUnits);
+			MyViewMonthly2.setRows(MyViewMonthly2.getFilteredRows([{column: 0, minValue: 2016},{column: 1, value: SelectedChargingZone},{column: 2, value: Mois}]));
+
+			DataGraphicEnRouteServiceUnitsAnnualEvolution = new google.visualization.DataView(MyViewMonthly2);
+			DataGraphicEnRouteServiceUnitsAnnualEvolution.setColumns([0, SelectedSUMetric, 12, 13]);
+
+			if (SelectedSUMetric == 14) {Couleur = 'DodgerBlue'; MySUTitle = "(Monthly variation) (" + Mois + " " + SelectedYear + " vs " + Mois + " " + (SelectedYear-1);}
+			if (SelectedSUMetric == 15) {Couleur = 'blue'; MySUTitle = "(YTD variation) (January - "+Mois + " vs January - " + Mois + " previous year";}
+			if (SelectedSUMetric == 11) {Couleur = 'red'; MySUTitle = "(YTD variation against plan) (January - "+Mois + " vs Plan ";}
+
+			var OptionsEnRouteSUAnnualEvolution = {
+				title: 'En-Route Service Units (' + SelectedChargingZone + ') ' + MySUTitle+') (Annual Evolution)',
+				width: 750,
+				height: 350,
+				bar: {groupWidth: '75%' },
+				series: {
+					0: {color: Couleur, pointSize: 5},
+					1: {type:'area',color:'grey', lineWidth: 0, visibleInLegend: false},
+					2: {type:'area',color:'grey', lineWidth: 0, visibleInLegend: false},
+				},
+				vAxis: {
+					format: YAxisFormat,
+				},
+				hAxis: {
+					textPosition: 'out',
+					textStyle: {fontSize: 14},
+					slantedText: true,
+					slantedTextAngle: 90,
+					format: '#',
+					ticks: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+
+				},
+				legend: {
+					position: 'none',
+				},
+				chartArea: {
+					left: 90,
+					top: 50,
+					width: 600,
+				},
+				animation: {
+					duration: 600,
+					easing: 'inAndOut',
+				},
+			};
+			
+			ChartEnRouteSUAnnualEvolution.draw(DataGraphicEnRouteServiceUnitsAnnualEvolution, OptionsEnRouteSUAnnualEvolution);
+			SelectYearInChartEnRouteSUAnnualEvolution();
+			function SelectYearInChartEnRouteSUAnnualEvolution() {
+				for(j = 0; j < DataGraphicEnRouteServiceUnitsAnnualEvolution.getNumberOfRows(); j++) {
+					if (DataGraphicEnRouteServiceUnitsAnnualEvolution.getValue(j,0) == SelectedYear) {
+//						alert("Trouv� " + SelectedYear + " en " + j);
+						ChartEnRouteSUAnnualEvolution.setSelection([{row: j , column:null}]);
+					}
+				}
+			}
+
+//------------------------------------Graphique SUs monthly evolution---------------------------------------------------
+			var MyViewMonthly3 = new google.visualization.DataView(DataEnRouteServiceUnits);
+			MyViewMonthly3.setRows(MyViewMonthly3.getFilteredRows([{column: 0, value: SelectedYear},{column: 1, value: SelectedChargingZone}]));
+
+/*			var Table1 = new google.visualization.Table(document.getElementById('Table1_div'));
+			Table1.draw(MyViewMonthly3, {showRowNumber: true, width: '100%', height: '100%'});*/
+
+			DataGraphicEnRouteServiceUnitsMonthlyEvolution = new google.visualization.DataView(MyViewMonthly3);
+			DataGraphicEnRouteServiceUnitsMonthlyEvolution.setColumns([2, SelectedSUMetric, 12, 13]);
+
+			var OptionsEnRouteSUMonthlyEvolution = {
+				title: 'En-Route Service Units (' + SelectedChargingZone + ') ' + MySUTitle+') (Monthly evolution)('+SelectedYear+')',
+				width: 750,
+				height: 350,
+				bar: {groupWidth: '75%' },
+				series: {
+					0: {color: Couleur, pointSize: 5},
+					1: {type:'area',color:'grey', lineWidth: 0, visibleInLegend: false},
+					2: {type:'area',color:'grey', lineWidth: 0, visibleInLegend: false},
+				},
+				vAxis: {
+					format: YAxisFormat,
+				},
+				hAxis: {
+					textPosition: 'out',
+					textStyle: {fontSize: 14},
+					slantedText: true,
+					slantedTextAngle: 90,
+					format: '#',
+//					ticks: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				},
+				legend: {
+					position: 'none',
+				},
+				chartArea: {
+					left: 90,
+					top: 50,
+					width: 600,
+				},
+				animation: {
+					duration: 600,
+					easing: 'inAndOut',
+				},
+			};
+			
+			ChartEnRouteSUMonthlyEvolution.draw(DataGraphicEnRouteServiceUnitsMonthlyEvolution, OptionsEnRouteSUMonthlyEvolution);
+			SelectMonthInChartEnRouteSUMonthlyEvolution();
+			function SelectMonthInChartEnRouteSUMonthlyEvolution() {
+				for(j = 0; j < DataGraphicEnRouteServiceUnitsMonthlyEvolution.getNumberOfRows(); j++) {
+					if (DataGraphicEnRouteServiceUnitsMonthlyEvolution.getValue(j,0) == Mois) {
+//						alert("Trouv� " + Mois + " en " + j);
+						ChartEnRouteSUMonthlyEvolution.setSelection([{row: j , column:null}]);
+					}
+				}
+			}
+
+		}
+		
+//------------------------------QueryANSPMonths----------------------------------
+		function QueryANSPMonths(response) {
+			if (response.isError()) {
+				alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+				return;
+			}
+			DataANSPMonths = response.getDataTable();
+
+/*			var Table1 = new google.visualization.Table(document.getElementById('Table1_div'));
+			Table1.draw(DataANSPMonths, {showRowNumber: true, width: '100%', height: '100%'});*/
+
+			DataANSPMonths.setColumnLabel(1, "Flights");
+			DataANSPMonths.setColumnLabel(2, "Delayed Flights");
+			DataANSPMonths.setColumnLabel(3, "Delays");
+			DataANSPMonths.setColumnLabel(4, "Capacity (ATC)");
+			DataANSPMonths.setColumnLabel(5, "Staffing (ATC)");
+			DataANSPMonths.setColumnLabel(6, "Disruptions (ATC)");
+			DataANSPMonths.setColumnLabel(7, "Weather");
+			DataANSPMonths.setColumnLabel(8, "Other");
+			DataANSPMonths.setColumnLabel(9, "NbDays");
+
+			DataANSPMonths.addColumn('number', 'En-route delay per flight');
+			DataANSPMonths.addColumn('number', 'En-route delay per delayed flight');
+			DataANSPMonths.addColumn('number', 'Share of delayed flight');
+			DataANSPMonths.addColumn('number', 'Average flights per day');
+
+			var NbFlights;
+			var NbDelayedFlights;
+			for (i=0 ; i < DataANSPMonths.getNumberOfRows(); i++) {
+				NbFlights = DataANSPMonths.getValue(i,1);
+				if (NbFlights == 0) DataANSPMonths.setValue(i,10,0);
+				 else DataANSPMonths.setValue(i,10,DataANSPMonths.getValue(i,3)/NbFlights);
+				
+				NbDelayedFlights = DataANSPMonths.getValue(i,2);
+				if ((NbDelayedFlights == 0) || (NbDelayedFlights == null)) DataANSPMonths.setValue(i,11,0);
+				 else DataANSPMonths.setValue(i,11,DataANSPMonths.getValue(i,3)/NbDelayedFlights); 
+
+				if (NbFlights == 0) DataANSPMonths.setValue(i,12,0);
+				 else DataANSPMonths.setValue(i,12,NbDelayedFlights/NbFlights);
+
+				DataANSPMonths.setValue(i,13,NbFlights/DataANSPMonths.getValue(i,9)); 
+			}
+			
+			var Formatter2DecimalsFigure = new google.visualization.NumberFormat({pattern:'0.00'});
+			Formatter2DecimalsFigure.format(DataANSPMonths, 10);
+			Formatter2DecimalsFigure.format(DataANSPMonths, 11);
+
+			var Formatter1DecimalPercentage = new google.visualization.NumberFormat({pattern:'0.0%'});
+			Formatter1DecimalPercentage.format(DataANSPMonths, 12);
+
+			var Formatter0DecimalFigure = new google.visualization.NumberFormat({pattern:'#,###,###'});
+			Formatter0DecimalFigure.format(DataANSPMonths, 13);
+			
+			DataANSPMonths.addColumn('string', 'Month');
+			for (i=0 ; i<DataANSPMonths.getNumberOfRows(); i++) {
+				DataANSPMonths.setValue(i,14,NameMonths[DataANSPMonths.getValue(i,0)-1]);
+			}
+			
+/*			var Table1 = new google.visualization.Table(document.getElementById('Table1_div'));
+			Table1.draw(DataANSPMonths, {showRowNumber: true, width: '100%', height: '100%'});*/
+			
+			ViewDataANSPMonths = new google.visualization.DataView(DataANSPMonths);
+			var TitreGraphique;
+			var MyColour;
+			var MyFormat="#,###,###";
+			
+			if(SelectedMetric=='Number of flights') {
+				ViewDataANSPMonths.setColumns([14, 1]);
+				TitreGraphique = 'Number of flights ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='Average number of flights per day') {
+				ViewDataANSPMonths.setColumns([14, 13]);
+				TitreGraphique = 'Average number of flights per day ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='Number of delayed flights') {
+				ViewDataANSPMonths.setColumns([14, 2]);
+				TitreGraphique = 'Number of delayed flights ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='Share of delayed flights') {
+				ViewDataANSPMonths.setColumns([14, 12]);
+				TitreGraphique = 'Share of delayed flights ';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.0%";
+			}	else if(SelectedMetric=='En-Route ATFM delays') {
+				ViewDataANSPMonths.setColumns([14, 3]);
+				TitreGraphique = 'En-Route ATFM delays ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Capacity (ATC)') {
+				ViewDataANSPMonths.setColumns([14, 4]);
+				TitreGraphique = 'En-Route ATFM delays - Capacity (ATC) ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Staffing (ATC)') {
+				ViewDataANSPMonths.setColumns([14, 5]);
+				TitreGraphique = 'En-Route ATFM delays - Staffing (ATC) ';
+				MyColour = 'Red';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Disruptions (ATC)') {
+				ViewDataANSPMonths.setColumns([14, 6]);
+				TitreGraphique = 'En-Route ATFM delays - Disruptions (ATC) ';
+				MyColour = 'Orange';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Weather') {
+				ViewDataANSPMonths.setColumns([14, 7]);
+				TitreGraphique = 'En-Route ATFM delays - Weather ';
+				MyColour = 'Green';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Other') {
+				ViewDataANSPMonths.setColumns([14, 8]);
+				TitreGraphique = 'En-Route ATFM delays - Other ';
+				MyColour = 'Purple';
+			}	else if(SelectedMetric=='En-Route ATFM delays per flight') {
+				ViewDataANSPMonths.setColumns([14, 10]);
+				TitreGraphique = 'En-Route ATFM delays per flight ';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.00";
+			}	else if(SelectedMetric=='En-Route ATFM delays per delayed flight') {
+				ViewDataANSPMonths.setColumns([14, 11]);
+				TitreGraphique = 'En-Route ATFM delays per delayed flight ';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.0";
+			}	else {
+				ViewDataANSPMonths.setColumns([14, 4, 5, 6, 7, 8])
+				TitreGraphique = 'En-Route ATFM delays per cause ';
+			};
+		
+			var OptionsANSPMonths = {
+				title: TitreGraphique+' ('+SelectedANSP+')('+SelectedYear+')',
+				width: 400,
+				height: 500,
+				legend: {
+					position: 'none',
+					maxLines: 3,
+				},
+				bar: {groupWidth: '75%' },
+				isStacked: true,
+				series: {
+					0: {color: MyColour},
+				},
+				vAxes: {
+					0: {format: MyFormat},
+				},
+				hAxis: {
+					textPosition: 'out',
+					textStyle: {fontSize: 13},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					ticks: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				},
+				chartArea: {
+					left: 90,
+					top: 50,
+//					width: 1100,
+				},
+				animation: {
+					duration: 600,
+					easing: 'inAndOut',
+				},
+			};
+			ChartANSPMonths.draw(ViewDataANSPMonths, OptionsANSPMonths);
+			SelectMonthInChartANSPMonths();
+			function SelectMonthInChartANSPMonths() {
+				for(j = 0; j < ViewDataANSPMonths.getNumberOfRows(); j++) {
+					if (ViewDataANSPMonths.getValue(j,0) == Mois) {
+//						alert("Trouv� " + Mois + " en " + j);
+						ChartANSPMonths.setSelection([{row: j , column:null}]);
+					}
+				}
+			}
+		}
+			
+		function QueryANSPsYearYTD(response) {
+			if (response.isError()) {
+				alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+				return;
+			}
+			DataANSPsYearYTD = response.getDataTable();
+			
+/*			var Table1 = new google.visualization.Table(document.getElementById('Table1_div'));
+			Table1.draw(DataANSPsYearYTD, {showRowNumber: true, width: '100%', height: '100%'});*/
+
+			DataANSPsYearYTD.setColumnLabel(4, "Flights");
+			DataANSPsYearYTD.setColumnLabel(5, "Delayed Flights");
+			DataANSPsYearYTD.setColumnLabel(6, "Delays");
+			DataANSPsYearYTD.setColumnLabel(7, "Capacity (ATC)");
+			DataANSPsYearYTD.setColumnLabel(8, "Staffing (ATC)");
+			DataANSPsYearYTD.setColumnLabel(9, "Disruptions (ATC)");
+			DataANSPsYearYTD.setColumnLabel(10, "Weather");
+			DataANSPsYearYTD.setColumnLabel(11, "Other");
+			DataANSPsYearYTD.setColumnLabel(12, "NbDays");
+
+			DataANSPsYearYTD.addColumn('number', 'En-route delay per flight');
+			DataANSPsYearYTD.addColumn('number', 'En-route delay per delayed flight');
+			DataANSPsYearYTD.addColumn('number', 'Share of delayed flight');
+			DataANSPsYearYTD.addColumn('number', 'Average flights per day');
+
+			var NbFlights;
+			var NbDelayedFlights;
+			for (i=0 ; i < DataANSPsYearYTD.getNumberOfRows(); i++) {
+				NbFlights = DataANSPsYearYTD.getValue(i,4);
+				if (NbFlights == 0) DataANSPsYearYTD.setValue(i,13,0);
+				 else DataANSPsYearYTD.setValue(i,13,DataANSPsYearYTD.getValue(i,6)/NbFlights);
+				
+				NbDelayedFlights = DataANSPsYearYTD.getValue(i,5);
+				if ((NbDelayedFlights == 0) || (NbDelayedFlights == null)) DataANSPsYearYTD.setValue(i,14,0);
+				 else DataANSPsYearYTD.setValue(i,14,DataANSPsYearYTD.getValue(i,6)/NbDelayedFlights); 
+
+				if (NbFlights == 0) DataANSPsYearYTD.setValue(i,15,0);
+				 else DataANSPsYearYTD.setValue(i,15,NbDelayedFlights/NbFlights);
+				 
+				DataANSPsYearYTD.setValue(i,16,NbFlights/DataANSPsYearYTD.getValue(i,12)); 
+			 }
+
+			var FormatterGeneralFigure = new google.visualization.NumberFormat({pattern:'0000'});
+			FormatterGeneralFigure.format(DataANSPsYearYTD, 3);
+			
+			var Formatter2DecimalsFigure = new google.visualization.NumberFormat({pattern:'0.00'});
+			Formatter2DecimalsFigure.format(DataANSPsYearYTD, 13);
+			Formatter2DecimalsFigure.format(DataANSPsYearYTD, 14);
+
+			var Formatter1DecimalPercentage = new google.visualization.NumberFormat({pattern:'0.0%'});
+			Formatter1DecimalPercentage.format(DataANSPsYearYTD, 15);
+
+			var Formatter0DecimalFigure = new google.visualization.NumberFormat({pattern:'#,###,###'});
+			Formatter0DecimalFigure.format(DataANSPsYearYTD, 16);
+			
+			var TitreGraphique;
+			var MyColour;
+			var MyFormat="#,###,###";
+			
+			ViewDataANSPsYearYTD = new google.visualization.DataView(DataANSPsYearYTD);
+			ViewDataANSPsYearYTD.setRows(ViewDataANSPsYearYTD.getFilteredRows([{column: 2, value: "All"}, {column: 3, value: SelectedYear}]));
+			
+			var ViewDataANSPsYearYTD2 = new google.visualization.DataView(ViewDataANSPsYearYTD);
+			
+			if(SelectedMetric=='Number of flights') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 4, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 4]);
+				TitreGraphique = 'Number of flights per ANSP';
+				MyColour = 'RoyalBlue';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+
+			if(SelectedMetric=='Average number of flights per day') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 16, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 16]);
+				TitreGraphique = 'Average number of flights per day';
+				MyColour = 'RoyalBlue';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+			
+			if(SelectedMetric=='Number of delayed flights') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 5, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 5]);
+				TitreGraphique = 'Number of delayed flights per ANSP';
+				MyColour = 'RoyalBlue';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+			
+			if(SelectedMetric=='Share of delayed flights') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 15, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 15]);
+				TitreGraphique = 'Share of delayed flights per ANSP';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.0%";
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+
+			if(SelectedMetric=='En-Route ATFM delays per cause') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 6, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 7, 8, 9, 10, 11]);
+				TitreGraphique = 'En-Route ATFM delays per cause per ANSP';
+				MyColour = 'RoyalBlue';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+			
+			if(SelectedMetric=='En-Route ATFM delays') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 6, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 6]);
+				TitreGraphique = 'En-Route ATFM delays per ANSP';
+				MyColour = 'RoyalBlue';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+			
+			if(SelectedMetric=='En-Route ATFM delays per flight') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 13, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 13]);
+				TitreGraphique = 'En-Route ATFM delays per flight per ANSP';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.00";
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+			};
+
+			if(SelectedMetric=='En-Route ATFM delays per delayed flight') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 14, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 14]);
+				TitreGraphique = 'En-Route ATFM delays per delayed flight per ANSP';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.0";
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+			};
+			
+			if(SelectedMetric=='En-Route ATFM delays - Capacity (ATC)') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 7, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 7]);
+				TitreGraphique = 'En-Route ATFM delays - Capacity (ATC) - per ANSP';
+				MyColour = 'RoyalBlue';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+
+			if(SelectedMetric=='En-Route ATFM delays - Staffing (ATC)') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 8, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 8]);
+				TitreGraphique = 'En-Route ATFM delays - Staffing (ATC) - per ANSP';
+				MyColour = 'Red';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+					
+			if(SelectedMetric=='En-Route ATFM delays - Disruptions (ATC)') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 9, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 9]);
+				TitreGraphique = 'En-Route ATFM delays - Disruptions (ATC) - per ANSP';
+				MyColour = 'Orange';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+					
+			if(SelectedMetric=='En-Route ATFM delays - Weather') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 10, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 10]);
+				TitreGraphique = 'En-Route ATFM delays - Weather - per ANSP';
+				MyColour = 'Green';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+					
+			if(SelectedMetric=='En-Route ATFM delays - Other') {
+				ViewDataANSPsYearYTD2.setRows(ViewDataANSPsYearYTD2.getSortedRows([{column: 11, desc: true}]));
+				ViewDataANSPsYearYTD2.setColumns([1, 11]);
+				TitreGraphique = 'En-Route ATFM delays - Other - per ANSP';
+				MyColour = 'Purple';
+				ViewDataANSPsYearYTD3 = new google.visualization.DataView(ViewDataANSPsYearYTD2);
+				ViewDataANSPsYearYTD3.setRows(1, ViewDataANSPsYearYTD3.getNumberOfRows()-1);
+			};
+					
+//------------------------------Delays per cause per ANSP for a specific year------------------------------
+			var OptionsANSPsYearYTD = {
+				title: TitreGraphique+' (January - '+NameMonths[SelectedMonth-1]+' '+SelectedYear+')',
+				width: 1500,
+				height: 600,
+				legend: {
+					position: 'bottom',
+					maxLines: 3,
+				},
+				bar: {groupWidth: '75%' },
+				isStacked: true,
+				series: {
+					0: {color: MyColour},
+				},
+				vAxes: {
+					0: {format: MyFormat},
+				},
+				hAxis: {
+					textPosition: 'out',
+					textStyle: {fontSize: 13},
+					slantedText: true,
+					slantedTextAngle: 90,
+				},
+				chartArea: {
+					left: 90,
+					top: 50,
+					width: 1400,
+				},
+				animation: {
+					duration: 600,
+					easing: 'inAndOut',
+				},
+			};
+			ChartANSPsYearYTD.draw(ViewDataANSPsYearYTD3, OptionsANSPsYearYTD);
+			SelectANSPInChartANSPsYearYTD();
+			function SelectANSPInChartANSPsYearYTD() {
+				for(j = 0; j < ViewDataANSPsYearYTD3.getNumberOfRows(); j++) {
+					if (ViewDataANSPsYearYTD3.getValue(j,0) == SelectedANSP) {
+//						alert("Trouv� " + SelectedANSP + " en " + j);
+						ChartANSPsYearYTD.setSelection([{row: j , column:null}]);
+					}
+				}
+			}
+
+//------------------------------Evolution Delays per year for a selected ANSP ------------------------------
+			ViewDataANSPYearsYTD = new google.visualization.DataView(DataANSPsYearYTD);
+			ViewDataANSPYearsYTD.setRows(ViewDataANSPYearsYTD.getFilteredRows([{column: 1, value: SelectedANSP}, {column: 2, value: "All"}]));
+
+/*			var Table1 = new google.visualization.Table(document.getElementById('Table1_div'));
+			Table1.draw(ViewDataANSPYearsYTD, {showRowNumber: true, width: '100%', height: '100%'});*/
+
+			var FirstYear = ViewDataANSPYearsYTD.getValue(0,3);
+			var IndiceYearSelectedYear = SelectedYear-FirstYear;
+			
+			
+//------------------------------Nom ANSP et periode----------------------------------
+			document.getElementById("ANSPName_div").innerHTML = SelectedANSP;
+//			document.getElementById("sel1").innerHTML = SelectedANSP;
+			if (NameMonths[SelectedMonth-1] == "January")
+				document.getElementById("Period_div").innerHTML = '(January '+SelectedYear+')';
+			else
+				document.getElementById("Period_div").innerHTML = '(January - '+NameMonths[SelectedMonth-1]+' '+SelectedYear+')';
+			
+//------------------------------Number of flights----------------------------------
+			document.getElementById("EnRouteFlights_div").innerHTML = (ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,4)/1000000).toFixed(1) +' M';
+			var MyArrow;
+			var MyColor;
+			if (IndiceYearSelectedYear>=1) {
+				var VariationEnRouteFlights = ((ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,4) / ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear-1,4)-1)*100);
+				if (VariationEnRouteFlights<0) {
+					MyArrow = "glyphicon-arrow-down";
+					MyColor="red";
+					Signe = '';
+				} else {
+					MyArrow = "glyphicon-arrow-up";
+					MyColor="Lime";
+					Signe = '+';
+				};
+				document.getElementById("VariationEnRouteFlights_div").innerHTML = '('+'<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+VariationEnRouteFlights.toFixed(0)+'% vs. '+(SelectedYear-1)+')';
+			}
+			else document.getElementById("VariationEnRouteFlights_div").innerHTML = '';
+
+//------------------------------Average number of flights per Day----------------------------------
+			document.getElementById("EnRouteFlightPerDay_div").innerHTML = (ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,16)).toFixed(0);
+			var MyArrow;
+			var MyColor;
+			if (IndiceYearSelectedYear>=1) {
+				var VariationEnRouteFlightsPerDay = ((ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,16) / ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear-1,16)-1)*100);
+				if (VariationEnRouteFlightsPerDay<0) {
+					MyArrow = "glyphicon-arrow-down";
+					MyColor="red";
+					Signe = '';
+				} else {
+					MyArrow = "glyphicon-arrow-up";
+					MyColor="Lime";
+					Signe = '+';
+				};
+				document.getElementById("VariationEnRouteFlightsPerDay_div").innerHTML = '('+'<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+VariationEnRouteFlightsPerDay.toFixed(0)+'% vs. '+(SelectedYear-1)+')';
+			}
+			else document.getElementById("VariationEnRouteFlightsPerDay_div").innerHTML = '';
+
+			
+//------------------------------En-route ATFM delay----------------------------------
+			document.getElementById("EnRouteATFMDelays_div").innerHTML = (ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,6)/1000000).toFixed(1) +' M min';
+			var MyArrow;
+			var MyColor;
+			if (IndiceYearSelectedYear>=1) {
+				var VariationEnRouteATFMDelays = ((ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,6) / ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear-1,6)-1)*100);
+				if (VariationEnRouteATFMDelays>0) {
+					MyArrow = "glyphicon-arrow-up";
+					MyColor="red";
+					Signe = '+';
+				} else {
+					MyArrow = "glyphicon-arrow-down";
+					MyColor="Lime";
+					Signe = '';
+				};
+				document.getElementById("VariationEnRouteATFMDelays_div").innerHTML = '('+'<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+VariationEnRouteATFMDelays.toFixed(0)+'% vs. '+(SelectedYear-1)+')';
+			}
+			else document.getElementById("VariationEnRouteATFMDelays_div").innerHTML = '';
+			
+//------------------------------Shared en-route delayed flights----------------------------------
+			var ShareDelayedFlights = (ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,5) / ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,4))*100;
+			document.getElementById("SharedDelayedFlights_div").innerHTML = ShareDelayedFlights.toFixed(1) +' %';
+			if (IndiceYearSelectedYear>=1) {
+				var VariationEnRouteATFMDelayedFlights = ShareDelayedFlights - (ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear-1,5) / ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear-1,4))*100;
+				if (VariationEnRouteATFMDelayedFlights>0) {
+					MyArrow = "glyphicon-arrow-up";
+					MyColor="red";
+					Signe = '+';
+				} else {
+					MyArrow = "glyphicon-arrow-down";
+					MyColor="Lime";
+					Signe = '';
+				};
+				document.getElementById("VariationEnRouteATFMDelayedFlights_div").innerHTML = '('+'<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+VariationEnRouteATFMDelayedFlights.toFixed(1)+'% pt vs. '+(SelectedYear-1)+')';
+			}
+			else document.getElementById("VariationEnRouteATFMDelayedFlights_div").innerHTML = '';
+			
+//------------------------------En-route ATFM delay per flight----------------------------------
+			document.getElementById("EnRouteATFMDelayPerFlight_div").innerHTML = ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,13).toFixed(2) +' min';
+			if (IndiceYearSelectedYear>=1) {
+				var VariationEnRouteATFMDelayPerFlight = (ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,13) - ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear-1,13));
+				if (VariationEnRouteATFMDelayPerFlight>0) {
+					MyArrow = "glyphicon-arrow-up";
+					MyColor="red";
+					Signe = '+';
+				} else {
+					MyArrow = "glyphicon-arrow-down";
+					MyColor="Lime";
+					Signe = '';
+				};
+				document.getElementById("VariationEnRouteATFMDelayPerFlight_div").innerHTML = '('+'<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+VariationEnRouteATFMDelayPerFlight.toFixed(2)+' vs. '+(SelectedYear-1)+')';
+			}
+			else document.getElementById("VariationEnRouteATFMDelayPerFlight_div").innerHTML = '';
+			
+//------------------------------En-route ATFM delay per delayed flight----------------------------------
+			document.getElementById("EnRouteATFMDelayPerDelayedFlight_div").innerHTML = ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,14).toFixed(1) +' min';
+			if (IndiceYearSelectedYear>=1) {
+				var VariationEnRouteATFMDelayPerDelayedFlight = (ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear,14) - ViewDataANSPYearsYTD.getValue(IndiceYearSelectedYear-1,14));
+				if (VariationEnRouteATFMDelayPerDelayedFlight>0) {
+					MyArrow = "glyphicon-arrow-up";
+					MyColor="red";
+					Signe = '+';
+				} else {
+					MyArrow = "glyphicon-arrow-down";
+					MyColor="Lime";
+					Signe = '';
+				};
+				document.getElementById("VariationEnRouteATFMDelayPerDelayedFlight_div").innerHTML = '('+'<span style="color: '+MyColor+';font-size: 100%;" class="glyphicon '+MyArrow+'"></span>'+Signe+VariationEnRouteATFMDelayPerDelayedFlight.toFixed(1)+' min vs. '+(SelectedYear-1)+')';
+			}
+			else document.getElementById("VariationEnRouteATFMDelayPerDelayedFlight_div").innerHTML = '';
+			
+//-----------------------------------------------------------------------------------------------
+			var MyFormat="#,###,###";
+
+			if(SelectedMetric=='Number of flights') {
+				ViewDataANSPYearsYTD.setColumns([3, 4]);
+				TitreGraphique = 'Number of flights ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='Average number of flights per day') {
+				ViewDataANSPYearsYTD.setColumns([3, 16]);
+				TitreGraphique = 'Average number of flights per day ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='Number of delayed flights') {
+				ViewDataANSPYearsYTD.setColumns([3, 5]);
+				TitreGraphique = 'Number of delayed flights ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='Share of delayed flights') {
+				ViewDataANSPYearsYTD.setColumns([3, 15]);
+				TitreGraphique = 'Share of delayed flights ';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.0%";
+			}	else if(SelectedMetric=='En-Route ATFM delays') {
+				ViewDataANSPYearsYTD.setColumns([3, 6]);
+				TitreGraphique = 'En-Route ATFM delays ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Capacity (ATC)') {
+				ViewDataANSPYearsYTD.setColumns([3, 7]);
+				TitreGraphique = 'En-Route ATFM delays - Capacity (ATC) ';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Staffing (ATC)') {
+				ViewDataANSPYearsYTD.setColumns([3, 8]);
+				TitreGraphique = 'En-Route ATFM delays - Staffing (ATC) ';
+				MyColour = 'Red';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Disruptions (ATC)') {
+				ViewDataANSPYearsYTD.setColumns([3, 9]);
+				TitreGraphique = 'En-Route ATFM delays - Disruptions (ATC) ';
+				MyColour = 'Orange';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Weather') {
+				ViewDataANSPYearsYTD.setColumns([3, 10]);
+				TitreGraphique = 'En-Route ATFM delays - Weather ';
+				MyColour = 'Green';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Other') {
+				ViewDataANSPYearsYTD.setColumns([3, 11]);
+				TitreGraphique = 'En-Route ATFM delays - Other ';
+				MyColour = 'Purple';
+			}	else if(SelectedMetric=='En-Route ATFM delays per flight') {
+				ViewDataANSPYearsYTD.setColumns([3, 13]);
+				TitreGraphique = 'En-Route ATFM delays per flight ';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.00";
+			}	else if(SelectedMetric=='En-Route ATFM delays per delayed flight') {
+				ViewDataANSPYearsYTD.setColumns([3, 14]);
+				TitreGraphique = 'En-Route ATFM delays per delayed flight ';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.0";
+			}	else {
+				ViewDataANSPYearsYTD.setColumns([3, 7, 8, 9, 10, 11]);
+				TitreGraphique = 'En-Route ATFM delays per cause ';
+				MyColour = 'RoyalBlue';
+			};
+
+			var OptionsANSPYearsYTD = {
+				title: TitreGraphique + "(" + SelectedANSP + ') (January - '+NameMonths[SelectedMonth-1]+')',
+				width: 400,
+				height: 500,
+				legend: {
+					position: 'none',
+					maxLines: 3,
+				},
+//				bar: {groupWidth: '75%' },
+				isStacked: true,
+				series: {
+					0: {color: MyColour},
+				},
+				vAxes: {
+					0: {format: MyFormat},
+				},
+				hAxis: {
+					format: '0',
+					textPosition: 'out',
+					textStyle: {fontSize: 13},
+					slantedText: true,
+					slantedTextAngle: 90,
+//					showTextEvery: 1,
+					ticks: [2016,2017,2018,2019,2020,2021,2022,2023,2024],
+				},
+				chartArea: {
+					left: 90,
+					top: 50,
+					width: 500,
+				},
+				animation: {
+					duration: 600,
+					easing: 'inAndOut',
+				},
+			};
+			ChartANSPYearsYTD.draw(ViewDataANSPYearsYTD, OptionsANSPYearsYTD);
+			SelectYearInChartANSPYearsYTD();
+			function SelectYearInChartANSPYearsYTD() {
+				for(j = 0; j < ViewDataANSPYearsYTD.getNumberOfRows(); j++) {
+					if (ViewDataANSPYearsYTD.getValue(j,0) == SelectedYear) {
+//						alert("Trouv� " + SelectedYear + " en " + j);
+						ChartANSPYearsYTD.setSelection([{row: j , column:null}]);
+					}
+				}
+			}
+
+
+
+
+			var FirstYear = ViewDataANSPYearsYTD.getValue(0,0);
+//			ChartANSPYearsYTD.setSelection([{row: SelectedYear-FirstYear , column: null}]);
+
+//------------------------------Evolution Delays per year for ACCs of a selected ANSP ------------------------------
+			ViewDataACCsANSPYearsYTD = new google.visualization.DataView(DataANSPsYearYTD);
+			ViewDataACCsANSPYearsYTD.setRows(ViewDataACCsANSPYearsYTD.getFilteredRows([ {column: 1, value: SelectedANSP}, 
+																					    {column:2, test: 
+																							function (value, row, column, table) {return (value != "All")},
+																						},
+																						{column: 3, minValue: SelectedYear-3},
+																						]));
+/*			var Table1 = new google.visualization.Table(document.getElementById('Table1_div'));
+			Table1.draw(ViewDataACCsANSPYearsYTD, {showRowNumber: true, width: '100%', height: '100%'});*/
+			
+			var MyFormat="#,###,###";
+
+			if(SelectedMetric=='Number of flights') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 4]);
+				TitreGraphique = 'Number of flights per ACC';
+				MyColour = 'RoyalBlue';
+			} else if(SelectedMetric=='Average number of flights per day') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 16]);
+				TitreGraphique = 'Average number of flights per day ';
+				MyColour = 'RoyalBlue';
+			} else if(SelectedMetric=='Number of delayed flights') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 5]);
+				TitreGraphique = 'Number of delayed flights per ACC';
+				MyColour = 'RoyalBlue';
+			} else if(SelectedMetric=='Share of delayed flights') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 15]);
+				TitreGraphique = 'Share of delayed flights per ACC';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.0%";
+			} else if(SelectedMetric=='En-Route ATFM delays') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 6]);
+				TitreGraphique = 'En-Route ATFM delays per ACC';
+				MyColour = 'RoyalBlue';
+			} else if(SelectedMetric=='En-Route ATFM delays - Capacity (ATC)') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 7]);
+				TitreGraphique = 'En-Route ATFM delays - Capacity (ATC)';
+				MyColour = 'RoyalBlue';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Staffing (ATC)') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 8]);
+				TitreGraphique = 'En-Route ATFM delays - Staffing (ATC)';
+				MyColour = 'Red';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Disruptions (ATC)') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 9]);
+				TitreGraphique = 'En-Route ATFM delays - Disruptions (ATC)';
+				MyColour = 'Orange';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Weather') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 10]);
+				TitreGraphique = 'En-Route ATFM delays - Weather';
+				MyColour = 'Green';
+			}	else if(SelectedMetric=='En-Route ATFM delays - Other') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 11]);
+				TitreGraphique = 'En-Route ATFM delays - Other';
+				MyColour = 'Purple';
+			}	else if(SelectedMetric=='En-Route ATFM delays per flight') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 13]);
+				TitreGraphique = 'En-Route ATFM delays per flight per ACC';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.00";
+			} else if (SelectedMetric=='En-Route ATFM delays per delayed flight') {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 14]);
+				TitreGraphique = 'En-Route ATFM delays per delayed flight per ACC';
+				MyColour = 'RoyalBlue';
+				MyFormat="0.0";
+			} else {
+				ViewDataACCsANSPYearsYTD.setColumns([2, 3, 7, 8, 9, 10, 11]);
+				TitreGraphique = 'En-Route ATFM delays per cause per ACC ';
+				MyColour = 'RoyalBlue';
+			}
+			
+			var DataANSPsYearYTD2 = new google.visualization.DataTable();
+			DataANSPsYearYTD2 = ViewDataACCsANSPYearsYTD.toDataTable()
+			
+			for (i=0 ; i<DataANSPsYearYTD2.getNumberOfRows(); i++) {
+				NameACC = DataANSPsYearYTD2.getValue(i,0)+' ('+DataANSPsYearYTD2.getValue(i,1)+')';
+				DataANSPsYearYTD2.setValue(i,0,	NameACC);
+			};
+
+			var OldYear = 0
+			for (i=0 ; i<DataANSPsYearYTD2.getNumberOfRows(); i++) {
+				NewYear = Number(DataANSPsYearYTD2.getValue(i,1));
+				if (NewYear < OldYear) {
+					DataANSPsYearYTD2.insertRows(i,1);
+				}
+				OldYear = NewYear;
+			};
+			
+			DataANSPsYearYTD2.removeColumn(1);
+			
+			var OptionsACCsANSPYearsYTD = {
+				title: TitreGraphique + ' (' + SelectedANSP + ') (January - '+NameMonths[SelectedMonth-1]+')',
+				width: 700,
+				height: 500,
+				legend: {
+					position: 'none',
+					maxLines: 3,
+				},
+//				bar: {groupWidth: '75%' },
+				isStacked: true,
+				series: {
+					0: {color: MyColour},
+				},
+				vAxes: {
+					0: {format: MyFormat},
+				},
+				hAxis: {
+					format: '0',
+					textPosition: 'out',
+					textStyle: {fontSize: 13},
+					slantedText: true,
+					slantedTextAngle: 90,
+				},
+				chartArea: {
+					left: 90,
+					top: 50,
+					width: 700,
+				},
+				animation: {
+					duration: 600,
+					easing: 'inAndOut',
+				},
+			};
+//			alert(SelectedANSP);
+			
+//			var Table1 = new google.visualization.Table(document.getElementById('Table1_div'));
+//			Table1.draw(DataANSPsYearYTD2, {showRowNumber: true, width: '100%', height: '100%'});
+			ChartACCsANSPYearsYTD.draw(DataANSPsYearYTD2, OptionsACCsANSPYearsYTD);
+			
+/*			if (SelectedANSP != 'EUROCONTROL Area (MS)')
+				ChartACCsANSPYearsYTD.draw(DataANSPsYearYTD2, OptionsACCsANSPYearsYTD);
+			else
+				document.getElementById("ChartACCsANSPYearsYTD_div").innerHTML ='&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp';*/
+			
+		};
+	};	  
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ3R0C35X7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJ3R0C35X7');
+</script>

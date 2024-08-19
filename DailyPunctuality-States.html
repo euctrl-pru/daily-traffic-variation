@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Daily Punctuality - States</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.7.2/css/all.css integrity=sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr crossorigin=anonymous>
+</head>
+
+<body onresize="ResizeWindow()">
+
+<style>
+	table, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		background-color: White;
+		padding: 5px;
+		align: middle;    
+	}
+</style>
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top"> -->
+	<!-- <a href="http://www.eurocontrol.int/"><img src="Pictures/Eurocontrol_logo_2010.svg" style="float:left" class="img" alt="Eurocontrol" width="50" height="50"></a> -->
+    <a href="http://www.eurocontrol.int/"><img src="Pictures/ec-color-print.jpg" style="float:left" class="img" alt="Eurocontrol" width="50" height="50"></a>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle navbar-brand" href="#" id="navbardrop" data-toggle="dropdown"><i class="far fa-star fa-spin fa-fw"></i> Aviation Intelligence</a>
+				<div class=dropdown-menu>
+					<a class=dropdown-item href=https://ansperformance.eu/><i class="fas fa-home"></i><span>&nbsp;<strong>Home</strong></span></a>
+
+					<a class=dropdown-item href=https://www.eurocontrol.int/Economics/BalancedScorecard.html><i class="fas fa-th"></i><span>&nbsp <strong>Balanced Scorecard</strong></span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/traffic/><i class="fas fa-plane-departure"></i><span>&nbsp <strong>Traffic</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html><i class="far fa-star fa-spin fa-fw"></i><span> Daily Traffic Variation & Restart </span><i class="far fa-star fa-spin fa-fw"></i></a>
+					<a class=dropdown-item href=https://ansperformance.eu/traffic/statfor/><span>&nbsp &nbsp &nbsp Traffic Forecast</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/><i class="fas fa-leaf"></i><span>&nbsp <strong>Efficiency & Environment</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/hfe/><span>&nbsp &nbsp &nbsp Horizontal Flight Efficiency</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/vfe/><span>&nbsp &nbsp &nbsp Vertical Flight Efficiency</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/asma/><span>&nbsp &nbsp &nbsp Terminal Holdings</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/efficiency/taxiout/><span>&nbsp &nbsp &nbsp Taxi-out</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/economics/><i class="fas fa-euro-sign"></i><span>&nbsp &nbsp <strong>Economics</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteMainDashboard.html><span>&nbsp &nbsp &nbsp Service Units</span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/ServiceUnits/Dashboard/EnRouteUnitRates.html><span>&nbsp &nbsp &nbsp Unit Rates and Costs</span></a>
+ 					<a class=dropdown-item href=https://www.eurocontrol.int/ACE><span>&nbsp &nbsp &nbsp ATM Cost Effectiveness</span></a>
+ 					<a class=dropdown-item href=https://ansperformance.eu/economics/finance/><span>&nbsp &nbsp &nbsp ANSPs Financial Situation</span></a>
+ 					<a class=dropdown-item href=https://ansperformance.eu/economics/cba/><span>&nbsp &nbsp &nbsp CBA</span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-user-friends"></i><span> <strong>Stakeholder views</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/airport/><span>&nbsp &nbsp &nbsp Airport View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/ansp/><span>&nbsp &nbsp &nbsp ANSP View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/fab/><span>&nbsp &nbsp &nbsp FAB View</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/dashboard/stakeholder/state/><span>&nbsp &nbsp &nbsp State View</span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/publications/><i class="fas fa-book"></i><span>&nbsp <strong>Publications</strong></span></a>
+
+					<a class=dropdown-item href=https://ansperformance.eu/data/><i class="fas fa-database"></i><span>&nbsp <strong>Data</strong></span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-hands-helping"></i><span> <strong>Reference</strong></span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/study/><span>&nbsp &nbsp &nbsp Studies</span></a>
+				
+					<a class=dropdown-item href=https://ansperformance.eu/definition/><span>&nbsp &nbsp &nbsp Definitions</span></a>
+					<a class=dropdown-item href=https://ansperformance.eu/methodology/><span>&nbsp &nbsp &nbsp Methodology</span></a>
+
+					<a class=dropdown-item href=><i class="fas fa-external-link-alt"></i><span>&nbsp <strong>External</strong></span></a>
+					<a class=dropdown-item href=https://www.eurocontrol.int/prudata/dashboard/><i class="fas "></i><span>&nbsp &nbsp &nbsp Single European Sky Portal</span></a>
+					<a class=dropdown-item href=https://www4.icao.int/ganpportal/><i class="fas "></i><span>&nbsp &nbsp &nbsp ICAO GANP</span></a>
+
+				</div>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Traffic Variation </a>
+				<div class="dropdown-menu">
+					<strong>&nbsp States</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-States.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-States.html"> Overview of the evolution</a>
+
+					<strong>&nbsp ACCs</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-ACCs.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-ACCs.html"> Overview of the evolution</a>
+
+					<strong>&nbsp Airports</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-Airports.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-Airports.html"> Overview of the evolution</a>
+
+					<strong>&nbsp Aircraft Operators</strong>
+					<a class="dropdown-item" href="./DailyTrafficVariation-AOs.html"> Daily Variation</a>
+					<a class="dropdown-item" href="./DailyTrafficRestart-AOs.html"> Overview of the evolution</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown active">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Punctuality Variation</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item active" href="./DailyPunctuality-States.html"> States</a>
+					<a class="dropdown-item" href="./DailyPunctuality-Airports.html"> Airports</a>
+				</div>
+			</li>
+			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Operated Schedules %</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="./DailyOperatedSchedules-Airports.html"> Airports</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+<div class="container-fluid">
+	<marquee width="101%" direction="left" loop="3" bgcolor="LightGrey">
+		<!-- <img src="Pictures/ec-color-print.jpg" width="25" height="25"> -->
+		<strong>July 2024: New!!!</strong> Download version 2 of our  EUROCONTROL DATA app (on <a href="https://apps.apple.com/us/app/eurocontrol-data/id6467232405">Apple App Store</a> & <a href="https://play.google.com/store/search?q=eurocontrol%20data&c=apps&hl=en&gl=US">Google Play Store</a>) which now provides a new State view for each of the 41 EUROCONTROL Member States. This application allows you to get in your pocket the very latest European aviation network data, up to date to the previous day. 
+	</marquee>
+
+
+	<table border="1">
+		<tr valign="top">
+			<td colspan="2">
+				<h2>Daily Punctuality - States</h2>
+				<div style='float:left; padding-top: 5px; padding-left: 10px; padding-right: 30px' id="EntityPicker_div"></div>
+				<div style='float:left; padding-top: 5px; padding-left: 10px; padding-right: 30px' id="IndicatorPicker_div"></div>
+<!--				<button type="button" class="btn btn-info" onclick="ButtonBackTo2020()"><i class="fa fa-step-backward"></i>&nbsp Back to 2020</button>
+				<button type="button" class="btn btn-info" onclick="ButtonBackTo2021()"><i class="fa fa-step-backward"></i>&nbsp Back to 2021</button> -->
+				<button type="button" class="btn btn-primary" onclick="Button0()"><i class="fa fa-calendar"></i>&nbsp From 1 Jan 2022</button>
+				<button type="button" class="btn btn-primary" onclick="Button1()"><i class="fa fa-calendar"></i>&nbsp From 1 Apr 2022</button>
+				<button type="button" class="btn btn-primary" onclick="Button2()"><i class="fa fa-calendar"></i>&nbsp From 1 Jul 2022</button>
+				<button type="button" class="btn btn-primary" onclick="Button3()"><i class="fa fa-calendar"></i>&nbsp From 1 Oct 2022</button>
+				<button type="button" class="btn btn-primary" onclick="Button4()"><i class="fa fa-calendar"></i>&nbsp From 1 Jan 2023</button>
+				<button type="button" class="btn btn-primary" onclick="Button5()"><i class="fa fa-calendar"></i>&nbsp From 1 Apr 2023</button>
+				<button type="button" class="btn btn-primary" onclick="Button6()"><i class="fa fa-calendar"></i>&nbsp From 1 Jul 2023</button>
+				<button type="button" class="btn btn-primary" onclick="Button7()"><i class="fa fa-calendar"></i>&nbsp From 1 Oct 2023</button> 
+				<button type="button" class="btn btn-primary" onclick="Button8()"><i class="fa fa-calendar"></i>&nbsp From 1 Nov 2024</button> 
+				<button type="button" class="btn btn-success" onclick="CopyAllImages()"><i class="fa fa-copy"></i>&nbsp Copy all images</button>
+				<button type="button" class="btn btn-secondary" onclick="ButtonDownload()"><i class="fa fa-download"></i>&nbsp Download</button>
+				<button type="button" class="btn btn-warning" onclick="About()"><i class="fa fa-question-circle"></i>&nbsp About</button>
+
+				<div id="MyTable1_div"></div>
+			</td>
+		</tr>
+		<tr>	
+			<td colspan="2">
+				<div id="MyEntityChart_div"></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><div id="MyGeoEntityChart_div"></div></td>
+		</tr>
+		<tr>
+			<td>
+				<h3 style='text-align:center'>Breakdown per main Airports<sup>*</sup></h3>
+				<div id="MyGeoAirportChart_div"></div>
+				<p><sup>*</sup>Airports with the 10 highest or lowest variations for the "Total Network Manager Area".</p>
+			</td>
+		</tr>
+	</table>
+</div>	
+</body>
+
+<footer id=footer class="text-center text-muted">
+	<br>
+    &copy; 2024&nbsp;EUROCONTROL &nbsp; &mdash; &nbsp;
+    <a href=https://ansperformance.eu/about/disclaimer/>Disclaimer</a>
+	&mdash;
+    <a href=https://www.eurocontrol.int/info/privacy-and-website-terms-use target=_blank>Privacy statement</a>
+	&mdash;
+    <span>
+      <a href="https://www.eurocontrol.int/form/aviation-intelligence-unit-aiu-newsletter">Subscribe to our Newsletter <i class="fas fa-envelope"></i></a>
+    </span>
+</footer>
+
+</html>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+		var Data;
+		var AirportData;
+		
+		var MyEntityView;
+		var MyEntityView1;
+		
+		var MyEntityChart;
+		var MyGeoEntityChart;
+		var MyEntityChartRangeFilter;
+		var MyEntityChartRangeFilterView;
+		var MyGeoAirportChart;
+
+		var MyGeoAirportView;
+		
+		var MyTable1;
+		var SelectedIndicator = 'Departure Punctuality %';
+		var SelectedEntity = '-Total Network Manager Area';
+		var MyWidthCharts = 1950;
+		var MyHeightCharts = 450;
+		var MyWidthGeoCharts = 1950;
+		var MyHeightGeoCharts = 450;
+		var MyWidthGeoAirportCharts = 1950;
+		var MyHeightGeoAirportCharts = 450;
+	
+		var SelectedStartDate = new Date(2023,9,1,0,0,0,0);
+		var SelectedEndDate;
+		var SelectedDate;		
+
+		var EntityPicker;
+		var IndicatorPicker;
+
+		var maxSecondScale;
+		var minSecondScale;
+
+		if (window.innerWidth >1200) {
+			MyWidthCharts = window.innerWidth * 0.97;
+			MyWidthGeoCharts = MyWidthCharts;
+			MyWidthGeoAirportCharts = MyWidthCharts * 0.97;
+		}
+
+		google.load('visualization', '1.0', {'packages':['corechart', 'table', 'controls']});
+		google.setOnLoadCallback(Initialisation);
+
+		function ResizeWindow() {
+			if (window.innerWidth >1200) {
+				MyWidthCharts = window.innerWidth * 0.97;
+				MyWidthGeoCharts = MyWidthCharts;
+				MyWidthGeoAirportCharts = MyWidthCharts * 0.97;
+			}
+			else {
+				MyWidthCharts = 1200*0.97;
+				MyWidthGeoCharts = MyWidthCharts;
+				MyWidthGeoAirportCharts = MyWidthCharts * 0.97;
+			}
+			drawMainDashboard();
+		}
+
+		function ButtonDownload() {
+			var link=document.createElement('a');
+			link.href = "https://www.eurocontrol.int/Economics/Download/States_Punctuality.xlsx";
+			link.click();
+		}
+
+		function ButtonBackTo2020() {
+			window.open("2020-DailyTrafficVariation-States.html","_parent");
+		}
+		function ButtonBackTo2021() {
+			window.open("2021-DailyTrafficVariation-States.html","_parent");
+		}
+		function Button0() {
+			SelectedStartDate = new Date(2022,0,1,0,0,0,0);
+			UpdateMainData();
+			UpdateMyEntityChart();
+			SelectEntityInGeoEntityChart();
+		}
+		function Button1() {
+			SelectedStartDate = new Date(2022,3,1,0,0,0,0);
+			UpdateMainData();
+			UpdateMyEntityChart();
+			SelectEntityInGeoEntityChart();
+		}
+		function Button2() {
+			SelectedStartDate = new Date(2022,6,1,0,0,0,0);
+			UpdateMainData();
+			UpdateMyEntityChart();
+			SelectEntityInGeoEntityChart();
+		}
+		function Button3() {
+			SelectedStartDate = new Date(2022,9,1,0,0,0,0);
+			UpdateMainData();
+			UpdateMyEntityChart();
+			SelectEntityInGeoEntityChart();
+		}
+		function Button4() {
+			SelectedStartDate = new Date(2023,0,1,0,0,0,0);
+			UpdateMainData();
+			UpdateMyEntityChart();
+			SelectEntityInGeoEntityChart();
+		}
+
+		function Button5() {
+			SelectedStartDate = new Date(2023,3,1,0,0,0,0);
+			UpdateData();
+			UpdateMyEntityChart();
+//			UpdateMyEntityChartRangeFilter();
+			SelectEntityInGeoEntityChart();
+		}
+		
+		function Button6() {
+			SelectedStartDate = new Date(2023,6,1,0,0,0,0);
+			UpdateData();
+			UpdateMyEntityChart();
+//			UpdateMyEntityChartRangeFilter();
+			SelectEntityInGeoEntityChart();
+		}
+
+		function Button7() {
+			SelectedStartDate = new Date(2023,9,1,0,0,0,0);
+			UpdateData();
+			UpdateMyEntityChart();
+//			UpdateMyEntityChartRangeFilter();
+			SelectEntityInGeoEntityChart();
+		}
+
+		function Button8() {
+			SelectedStartDate = new Date(2024,0,1,0,0,0,0);
+			UpdateData();
+			UpdateMyEntityChart();
+//			UpdateMyEntityChartRangeFilter();
+			SelectEntityInGeoEntityChart();
+		}
+
+		function CopyAllImages() {
+			var myWidth = MyEntityChart.getChartLayoutInterface().getBoundingBox('chartarea').width;
+			var myHeight = MyEntityChart.getChartLayoutInterface().getBoundingBox('chartarea').height*2;
+			var mySize = "width="+myWidth+",height="+myHeight; 
+			
+			var myWindow = window.open("", "MsgWindow", mySize);
+			
+			myWindow.document.write('<img src="' + MyEntityChart.getImageURI() + '"><img src="' + MyGeoEntityChart.getImageURI() + '"><img src="' + MyGeoAirportChart.getImageURI() + '">');
+		}
+
+		function About() {
+			var myWidth = 500;
+			var myHeight = 700;
+			var mySize = "width="+myWidth+",height="+myHeight; 
+			
+			var myWindow = window.open("", "MsgWindow", mySize);
+			myWindow.document.write("<div class='container-fluid'><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'><h2>Daily Punctuality - States</h2><p>This page presents the daily variation of arrival and departure punctuality<sup>1,2</sup> for the European States.</p><p>The graphics on the right present the folllowing indicators (updated until yesterday):<ul><li>the <strong><span style='color:darkBlue'>daily departure punctuality %</span></strong><sup>1</sup>,</li><li>the <strong><span style='color:DodgerBlue'>daily arrival punctuality %</span></strong><sup>2</sup>,</li><li>the <strong><span style='color:Orange'>daily difference between departure delays and arrival delays</span></strong>,</li><li>the <strong><span style='color:red'>daily operated schedules %</span></strong><sup>3</sup>.</ul></p><p>It also present the situation of the main airports of the selected States. For the Network Manager Area, the situation of the top 10 highest and lowest airports in Europe is shown.</p><br><br><p><sup>1</sup> Departure punctuality = Share of IFR flights departing within 15 minutes after the scheduled arrival/departure time (airline schedules) per State.</p><p><sup>2</sup> Arrival punctuality = Share of IFR flights arriving within 15 minutes after the scheduled arrival/departure time (airline schedules) per State.</p><p><sup>3</sup> Operated schedules % = Percentage of airline schedules that match to an operated flight (with ATC flight plan) compared to the total number of expected flights. The schedule information consists of data received from EUACA and third parties, this data is loaded two days before the flight is scheduled to operate.</p></td></div>");
+		}
+
+		function Initialisation() {
+			// get country data
+			var request = new XMLHttpRequest();
+			request.open("GET", "pun_ct_data.json", false);
+			request.send(null)
+			var oscardata = JSON.parse(request.responseText);
+
+			Datastring = google.visualization.arrayToDataTable(oscardata);
+
+			Data = new google.visualization.DataTable();
+
+			for(j = 0; j < Datastring.getNumberOfColumns(); j++) {
+				Data.addColumn(Datastring.getValue(0,j), Datastring.getColumnLabel(j));
+				// alert(Datastring.getValue(0,j))
+			}
+
+			Datastring.removeRow(0)
+			Data.addRows(Datastring.getNumberOfRows());
+
+			// alert(Datastring.getNumberOfRows() + "/" + Data.getNumberOfRows() );
+
+			for(j = 0; j < Data.getNumberOfColumns(); j++) {
+
+				if (Data.getColumnType(j) == 'number') {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j, Number (Datastring.getValue(i,j)));
+					}
+				}
+				else if (Data.getColumnType(j) == 'date') {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j, new Date(Datastring.getValue(i,j)));
+					}
+				}
+				else {
+					for(i = 0; i < Data.getNumberOfRows(); i++) {
+						Data.setCell(i,j,Datastring.getValue(i,j));
+					}
+				}
+
+			}
+
+			// get airport data
+			var aptrequest = new XMLHttpRequest();
+			aptrequest.open("GET", "pun_apt_100_data.json", false);
+			aptrequest.send(null)
+			var aptoscardata = JSON.parse(aptrequest.responseText);
+
+			aptDatastring = google.visualization.arrayToDataTable(aptoscardata);
+
+			AirportData = new google.visualization.DataTable();
+
+			for(j = 0; j < aptDatastring.getNumberOfColumns(); j++) {
+				AirportData.addColumn(aptDatastring.getValue(0,j), aptDatastring.getColumnLabel(j));
+				// alert(Datastring.getValue(0,j))
+			}
+
+			aptDatastring.removeRow(0)
+			AirportData.addRows(aptDatastring.getNumberOfRows());
+
+			// alert(Datastring.getNumberOfRows() + "/" + Data.getNumberOfRows() );
+
+			for(j = 0; j < AirportData.getNumberOfColumns(); j++) {
+
+				if (AirportData.getColumnType(j) == 'number') {
+					for(i = 0; i < AirportData.getNumberOfRows(); i++) {
+						AirportData.setCell(i,j, Number (aptDatastring.getValue(i,j)));
+					}
+				}
+				else if (AirportData.getColumnType(j) == 'date') {
+					for(i = 0; i < AirportData.getNumberOfRows(); i++) {
+						AirportData.setCell(i,j, new Date(aptDatastring.getValue(i,j)));
+					}
+				}
+				else {
+					for(i = 0; i < AirportData.getNumberOfRows(); i++) {
+						AirportData.setCell(i,j,aptDatastring.getValue(i,j));
+					}
+				}
+
+			}
+
+			drawMainDashboard();
+		}
+
+//----------------Main view-------------------------------
+		function drawMainDashboard() {
+			SelectedEndDate = Data.getValue(Data.getNumberOfRows()-1,0);
+			SelectedDate = SelectedEndDate;
+			
+/*			var FormatterMiniDate = new google.visualization.DateFormat({formatType: 'short'});
+			FormatterMiniDate.format(Data, 2);*/
+
+			var FormatterUneDecimale = new google.visualization.NumberFormat({pattern:'0.0'});
+			FormatterUneDecimale.format(Data, 4);
+			FormatterUneDecimale.format(Data, 5);
+			FormatterUneDecimale.format(Data, 6);
+
+			var FormatterPercentage = new google.visualization.NumberFormat({pattern:'0.0%'});
+			FormatterPercentage.format(Data, 2);
+			FormatterPercentage.format(Data, 3); 
+			FormatterPercentage.format(Data, 7); 
+
+			drawAirportBreakdownDashboard()
+			// var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1viUbd1ioVQSS8VaIMUy1cGEwwyIVVU5DLMiJimqGUGQ/edit?usp=sharing');  // Link to Airport table
+			// query.send(drawAirportBreakdownDashboard);
+
+//________________________________________________________________________________________________________
+			EntityPicker = new google.visualization.ControlWrapper({
+				controlType: 'CategoryFilter',
+				containerId: 'EntityPicker_div',
+				dataTable: Data,
+				state: {selectedValues: [SelectedEntity]},
+				options: {
+					filterColumnLabel: 'Country',
+					ui: {
+						label: 'Select State:',
+						caption: '',
+//						labelStacking: 'vertical',
+						allowTyping: false,
+						allowMultiple: false,
+						sortValues: true,
+						allowNone: false,
+//						cssClass: 'ClassANSPPicker',
+					},
+				}
+			});
+			EntityPicker.draw();
+			google.visualization.events.addListener(EntityPicker, 'statechange', changeEntityPicker);
+
+			function changeEntityPicker() {
+				SelectedEntity = EntityPicker.getState().selectedValues[0];
+				UpdateMainData();
+				UpdateAirportData();
+				UpdateMyEntityChart();
+				UpdateMyGeoEntityChart();
+				SelectEntityInGeoEntityChart();
+			};	
+
+//________________________________________________________________________________________________________
+			var dataIndicators = google.visualization.arrayToDataTable([
+				['Indicator'],
+				['Departure Punctuality %'],
+				['Arrival Punctuality %'],
+//				['Average Departure Schedule Delay'],
+//				['Average Arrival Schedule Delay'],
+				['Avg Departure - Arrival Schedule Delay'],
+				['Operated Schedules %']
+			]);
+
+			IndicatorPicker = new google.visualization.ControlWrapper({
+				controlType: 'CategoryFilter',
+				containerId: 'IndicatorPicker_div',
+				dataTable: dataIndicators,
+				state: {selectedValues: [SelectedIndicator]},
+				options: {
+					filterColumnLabel: 'Indicator',
+					ui: {
+						label: 'Select Indicator:',
+						caption: '',
+//						labelStacking: 'vertical',
+						allowTyping: false,
+						allowMultiple: false,
+						sortValues: false,
+						allowNone: false,
+//						cssClass: 'ClassANSPPicker',
+					},
+				}
+			});
+			IndicatorPicker.draw();
+			google.visualization.events.addListener(IndicatorPicker, 'statechange', changeIndicatorPicker);
+
+			function changeIndicatorPicker() {
+				SelectedIndicator = IndicatorPicker.getState().selectedValues[0];
+				UpdateMainData();
+				UpdateAirportData();
+				UpdateMyEntityChart();
+				UpdateMyGeoEntityChart();
+				SelectEntityInGeoEntityChart();
+			};
+//________________________________________________________	
+
+			UpdateMainData();
+
+//________________________________________________________
+			MyEntityChart = new google.visualization.ComboChart(document.getElementById('MyEntityChart_div'));
+			google.visualization.events.addListener(MyEntityChart, 'select', selectMyEntityChart);
+			UpdateMyEntityChart();
+
+			MyGeoEntityChart = new google.visualization.ComboChart(document.getElementById('MyGeoEntityChart_div'));
+			google.visualization.events.addListener(MyGeoEntityChart, 'select', selectMyGeoEntityChart);
+			UpdateMyGeoEntityChart();
+		};
+
+//________________________________________________________________________________________________________
+		function UpdateMainData() {	
+			MyGeoEntityView = new google.visualization.DataView(Data);
+			MyGeoEntityView.setRows(Data.getFilteredRows([{column:0, value: SelectedDate, minValue: SelectedStartDate, maxValue: SelectedEndDate}]));
+
+			var DataMyGeoEntityView = new google.visualization.DataTable();
+			DataMyGeoEntityView1 = MyGeoEntityView.toDataTable()
+
+			MyGeoEntityView1 = new google.visualization.DataView(DataMyGeoEntityView1);
+			if (SelectedIndicator == 'Departure Punctuality %') MyGeoEntityView1.setColumns([1,2]);
+			if (SelectedIndicator == 'Arrival Punctuality %') MyGeoEntityView1.setColumns([1,3]);
+//			if (SelectedIndicator == 'Average Departure Schedule Delay') MyGeoEntityView1.setColumns([1,4]);
+//			if (SelectedIndicator == 'Average Arrival Schedule Delay') MyGeoEntityView1.setColumns([1,5]);
+			if (SelectedIndicator == 'Avg Departure - Arrival Schedule Delay') MyGeoEntityView1.setColumns([1,6]);
+			if (SelectedIndicator == 'Operated Schedules %') MyGeoEntityView1.setColumns([1,7]);
+
+			MyGeoEntityView1.setRows(MyGeoEntityView1.getSortedRows([{column: 1, desc: true}]));
+	
+			if (SelectedEntity=="Initialisation") {
+				SelectedEntity = MyGeoEntityView1.getValue(0,0);
+				EntityPicker.setState({selectedValues: [SelectedEntity]});
+				EntityPicker.draw();
+			}
+//_____________________________________________________________________________________________________________			
+			MyEntityView = new google.visualization.DataView(Data);
+			MyEntityView.setRows(Data.getFilteredRows([{column:1, value: SelectedEntity},{column:0, minValue: SelectedStartDate, maxValue: SelectedEndDate}]));
+			
+			var DataMyEntityView = new google.visualization.DataTable();
+			DataMyEntityView1 = MyEntityView.toDataTable()
+
+			MyEntityView1 = new google.visualization.DataView(DataMyEntityView1);
+			MyEntityView1.setColumns([0,2,3,6,7]);
+				
+//------------------------------------------
+/*			maxSecondScale=-10000;
+			minSecondScale=10000;
+			for(i=0;i<MyEntityView1.getNumberOfRows();i++) {
+				if (MyEntityView1.getValue(i,3)>maxSecondScale) maxSecondScale=MyEntityView1.getValue(i,3);
+				if (MyEntityView1.getValue(i,3)<minSecondScale) minSecondScale=MyEntityView1.getValue(i,3);
+				if (MyEntityView1.getValue(i,4)>maxSecondScale) maxSecondScale=MyEntityView1.getValue(i,4);
+				if (MyEntityView1.getValue(i,4)<minSecondScale) minSecondScale=MyEntityView1.getValue(i,4);
+			}
+//			alert(maxSecondScale);*/
+		};
+//________________________________________________________________________________________________________
+
+		function selectMyEntityChart() {
+			if(MyEntityChart.getSelection() != "") {
+				SelectedDate = MyEntityView1.getValue(MyEntityChart.getSelection()[0].row, 0);
+
+				SelectedIndicator = MyEntityView1.getColumnLabel(MyEntityChart.getSelection()[0].column);
+				UpdateMainData();
+				UpdateAirportData();
+				UpdateMyEntityChart();
+				UpdateMyGeoEntityChart();
+				SelectEntityInGeoEntityChart();
+				IndicatorPicker.setState({selectedValues: [SelectedIndicator]});
+				IndicatorPicker.draw();
+			}
+		}
+//________________________________________________________________________________________________________
+
+		function UpdateMyEntityChart() {
+			var SecondPartOfTheTitle;
+			if (SelectedEntity == '-Total Network Manager Area') SecondPartOfTheTitle = ' (All flights)'; else SecondPartOfTheTitle = ' (Arr/Dep flights)';
+			var	optionsMyEntityChart = {
+				title: SelectedEntity + SecondPartOfTheTitle,
+				titlePosition: 'out',
+				width: MyWidthCharts,
+				height: MyHeightCharts,
+				pointSize: 3,
+				dataOpacity: 0.5,
+				series: {
+					0: {type:'line', dataOpacity:1.0, color:'darkBlue', pointSize: 5, lineWidth: 2, targetAxisIndex:0},
+					1: {type:'line', dataOpacity:1.0, color:'DodgerBlue', pointSize: 5, lineWidth: 2, targetAxisIndex:0},
+//					2: {type:'bars', dataOpacity:1.0, color:'darkGrey', targetAxisIndex:1},
+//					3: {type:'bars', dataOpacity:1.0, color:'red', targetAxisIndex:1},
+					2: {type:'bars', dataOpacity:1.0, color:'orange', targetAxisIndex:1},
+					3: {type:'line', dataOpacity:1.0, color:'red', pointSize: 5, lineWidth: 2, targetAxisIndex:0},
+				},
+				hAxis: {
+					format: 'MMM dd, yyyy',
+					textPosition: 'out',
+					textStyle: {fontSize: 14},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: {count: MyEntityView1.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: '0%'},
+//					1: {format: '0%', maxValue: maxSecondScale, minValue: minSecondScale}
+					1: {format: '#,###', viewWindow: {max: maxSecondScale+0.02, min: minSecondScale-0.02}}
+//					1: {format: '0%', viewWindow: {viewWindowMode: 'maximized'}}
+				},
+				legend: {
+					position: 'bottom',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:80,
+					top:40,
+					width:'90%',
+					height:'60%'
+				},
+			};
+				
+			MyEntityChart.draw(MyEntityView1,optionsMyEntityChart);
+			SelectDateInEntityChart();
+		};
+
+//________________________________________________________________________________________________________
+		function SelectDateInEntityChart() {
+			for(j = 0; j < MyEntityView1.getNumberOfRows(); j++) {
+				if (MyEntityView1.getValue(j,0).toDateString() == SelectedDate.toDateString()) {
+//					alert("Trouvé " + SelectedDate + " en " + j);
+					MyEntityChart.setSelection([{row: j , column:null}]);
+				}
+			}
+		};			
+
+//________________________________________________________________________________________________________
+		function selectMyGeoEntityChart() {
+			if(MyGeoEntityChart.getSelection() != "") {
+				SelectedEntity = MyGeoEntityView1.getValue(MyGeoEntityChart.getSelection()[0].row, 0);
+				EntityPicker.setState({selectedValues: [SelectedEntity]});
+				EntityPicker.draw();
+				UpdateMainData();
+				UpdateAirportData();
+				UpdateMyEntityChart();
+				UpdateMyGeoEntityChart();
+			}
+		}
+			
+		function UpdateMyGeoEntityChart() {
+			var MyTitle;
+			var MyColour;
+			var MyFormat;
+			var MyMaxScaleY;
+			var MyMinScaleY;
+
+				
+			if (SelectedIndicator == 'Departure Punctuality %') {
+				MyTitle = "Departure Punctuality % - " + SelectedDate.toDateString();
+				MyColour = 'darkBlue';
+				MyFormat = '0%';
+			}
+			if (SelectedIndicator == 'Arrival Punctuality %') {
+				MyTitle = "Arrival Punctuality % - " + SelectedDate.toDateString();
+				MyColour = 'DodgerBlue';
+				MyFormat = '0%';
+			}
+/*			if (SelectedIndicator == 'Average Departure Schedule Delay') {
+				MyTitle = "Average Departure Schedule Delay - " + SelectedDate.toDateString();
+				MyColour = 'darkGrey';
+				MyFormat = '#,###';
+			}
+			if (SelectedIndicator == 'Average Arrival Schedule Delay') {
+				MyTitle = "Average Arrival Schedule Delay - " + SelectedDate.toDateString();
+				MyColour = 'red';
+				MyFormat = '#,###';
+				MyMaxScaleY = 40; 
+			}*/
+			if (SelectedIndicator == 'Avg Departure - Arrival Schedule Delay') {
+				MyTitle = "Avg Departure - Arrival Schedule Delay - " + SelectedDate.toDateString();
+				MyColour = 'orange';
+				MyFormat = '#,###';
+				MyMaxScaleY = 15;
+				MyMinScaleY = -15;
+			}
+			if (SelectedIndicator == 'Operated Schedules %') {
+				MyTitle = "Operated Schedules % - " + SelectedDate.toDateString();
+				MyColour = 'red';
+				MyFormat = '0%';
+			}
+
+			var SecondPartOfTheTitle;
+			if (SelectedEntity == '-Total Network Manager Area') SecondPartOfTheTitle = ' (All flights)'; else SecondPartOfTheTitle = ' (Arr/Dep flights)';
+
+			var	optionsMyGeoEntityChart = {
+				title: MyTitle + SecondPartOfTheTitle,
+				titlePosition: 'out',
+				width: MyWidthGeoCharts,
+				height: MyHeightGeoCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'bars',color: MyColour, pointSize: 5, targetAxisIndex:0},
+				},
+				hAxis: {
+//						format: 'dd/mm/yyyy',
+					textPosition: 'out',
+					textStyle: {fontSize: 14},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: { count: MyGeoEntityView1.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: MyFormat}
+				},
+				vAxis: {
+					viewWindow: {
+//						viewWindowMode: 'maximized'
+						max: MyMaxScaleY,
+						min: MyMinScaleY
+
+					}
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:80,
+					top:40,
+					width:'90%',
+					height:'50%'
+				},
+			};
+				
+			MyGeoEntityChart.draw(MyGeoEntityView1,optionsMyGeoEntityChart);
+			SelectEntityInGeoEntityChart();
+		};
+			
+//________________________________________________________________________________________________________
+		function SelectEntityInGeoEntityChart() {
+			for(j = 0; j < MyGeoEntityView1.getNumberOfRows(); j++) {
+				if (MyGeoEntityView1.getValue(j,0) == SelectedEntity) {
+//						alert("Trouvé " + SelectedEntity + " en " + j);
+					MyGeoEntityChart.setSelection([{row: j , column:null}]);
+				}
+			}
+		};
+
+//---------------Airport Breakdown------------------------
+		function drawAirportBreakdownDashboard() {
+			// AirportData = response.getDataTable();
+
+/*			var FormatterMiniDate = new google.visualization.DateFormat({formatType: 'short'});
+			FormatterMiniDate.format(Data, 2);*/
+
+			var FormatterUneDecimale = new google.visualization.NumberFormat({pattern:'0.0'});
+			FormatterUneDecimale.format(AirportData, 5);
+			FormatterUneDecimale.format(AirportData, 6);
+			FormatterUneDecimale.format(AirportData, 7);
+
+			var FormatterPercentage = new google.visualization.NumberFormat({pattern:'0.0%'});
+			FormatterPercentage.format(AirportData, 3);
+			FormatterPercentage.format(AirportData, 4); 
+			FormatterPercentage.format(AirportData, 8); 
+
+			MyGeoAirportChart = new google.visualization.ComboChart(document.getElementById('MyGeoAirportChart_div'));
+
+			UpdateAirportData();
+		}
+
+		function UpdateAirportData() {	
+			if (AirportData != null) {
+				var MyGeoAirportView1 = new google.visualization.DataView(AirportData);
+
+//________________________________________________________________________________________________________
+				if (SelectedEntity == '-Total Network Manager Area') {
+					MyGeoAirportView1.setRows(AirportData.getFilteredRows([{column:0, value: SelectedDate}]));
+					}
+				else
+					MyGeoAirportView1.setRows(AirportData.getFilteredRows([{column:0, value: SelectedDate},{column:2, value: SelectedEntity}]));
+
+//________________________________________________________________________________________________________
+
+				if (SelectedIndicator == 'Departure Punctuality %') MyGeoAirportView1.setColumns([1,3]);
+				if (SelectedIndicator == 'Arrival Punctuality %') MyGeoAirportView1.setColumns([1,4]);
+				if (SelectedIndicator == 'Avg Departure - Arrival Schedule Delay') MyGeoAirportView1.setColumns([1,7]);
+				if (SelectedIndicator == 'Operated Schedules %') MyGeoAirportView1.setColumns([1,8]);
+
+//_____________________________Table 1__________________________________________________________________________
+/*				MyTable1 = new google.visualization.Table(document.getElementById('MyTable1_div'));
+				var OptionsMyTable1 = {
+					width: MyWidthCharts,
+					height: 200,
+				};
+				MyTable1.draw(MyGeoAirportView1, OptionsMyTable1);	*/
+//________________________________________________________________________________________________________
+
+				var MyGeoAirportView2 = new google.visualization.DataView(MyGeoAirportView1);
+				MyGeoAirportView2.setRows(MyGeoAirportView2.getSortedRows([{column: 1, desc: true}]));
+					
+				MyGeoAirportView = new google.visualization.DataView(MyGeoAirportView2);
+					
+				if (SelectedEntity == '-Total Network Manager Area') {
+					var NbRows = MyGeoAirportView.getNumberOfRows();
+					MyGeoAirportView.setRows([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, NbRows-10, NbRows-9, NbRows-8, NbRows-7, NbRows-6, NbRows-5, NbRows-4, NbRows-3, NbRows-2, NbRows-1]);
+				}
+
+
+
+				UpdateMyGeoAirportChart();
+			}
+		}
+
+		function UpdateMyGeoAirportChart() {
+			var MyTitle;
+			var MyColour;
+			var MyFormat;
+					
+			if (SelectedIndicator == 'Departure Punctuality %') {
+				MyTitle = "Departure Punctuality % - " + SelectedDate.toDateString();
+				MyColour = 'darkBlue';
+				MyFormat = '0%';
+			}
+			if (SelectedIndicator == 'Arrival Punctuality %') {
+				MyTitle = "Arrival Punctuality % - " + SelectedDate.toDateString();
+				MyColour = 'DodgerBlue';
+				MyFormat = '0%';
+			}
+/*			if (SelectedIndicator == 'Average Departure Schedule Delay') {
+				MyTitle = "Average Departure Schedule Delay - " + SelectedDate.toDateString();
+				MyColour = 'darkGrey';
+				MyFormat = '#,###';
+			}
+			if (SelectedIndicator == 'Average Arrival Schedule Delay') {
+				MyTitle = "Average Arrival Schedule Delay - " + SelectedDate.toDateString();
+				MyColour = 'red';
+				MyFormat = '#,###';
+				MyMaxScaleY = 40; 
+			}*/
+			if (SelectedIndicator == 'Avg Departure - Arrival Schedule Delay') {
+				MyTitle = "Avg Departure - Arrival Schedule Delay - " + SelectedDate.toDateString();
+				MyColour = 'orange';
+				MyFormat = '#,###';
+				MyMaxScaleY = 15;
+				MyMinScaleY = -15;
+			}
+			if (SelectedIndicator == 'Operated Schedules %') {
+				MyTitle = "Operated Schedules % - " + SelectedDate.toDateString();
+				MyColour = 'red';
+				MyFormat = '0%';
+			}
+
+			var	optionsMyGeoAirportChart = {
+				title: MyTitle,
+				titlePosition: 'out',
+				width: MyWidthGeoAirportCharts,
+				height: MyHeightGeoAirportCharts,
+				pointSize: 3,
+				series: {
+					0: {type:'bars',color: MyColour, pointSize: 5, targetAxisIndex:0},
+				},
+				hAxis: {
+//					format: 'dd/mm/yyyy',
+					textPosition: 'out',
+					textStyle: {fontSize: 14},
+					slantedText: true,
+					slantedTextAngle: 90,
+					gridlines: { count: MyGeoAirportView.getNumberOfRows()},
+				},
+				vAxes: {
+					0: {format: MyFormat}
+				},
+				legend: {
+					position: 'none',
+				},
+				animation: {
+					duration: 200,
+					easing: 'inAndOut',
+				},
+				chartArea:{
+					left:80,
+					top:40,
+					width:'90%',
+					height:'50%'
+				},
+			};
+			MyGeoAirportChart.draw(MyGeoAirportView,optionsMyGeoAirportChart);
+		};
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ3R0C35X7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RJ3R0C35X7');
+</script>
