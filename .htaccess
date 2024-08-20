@@ -1,6 +1,0 @@
-# Specify the users or groups to have access, 2 examples given
-# require ldap-user <username>
-# require ldap-group cn=<groupname>,ou=eurogroups,o=eurocontrol,o=ec
-
-# Set it open to everybody
-Require all granted
