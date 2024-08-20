@@ -94,25 +94,39 @@ body {
 }
 
 /* Media Queries */
-@media (min-width: 1200px) {
-    .bg-dark {
-        box-shadow: none;
-        background-color: transparent !important; /* Remove the background color */
-    }
-    .hero {
-        height: 35vh; /* Adjust this value to control the height for medium screens */
-    }
-}
-
+/* Large screens (1440px and above) */
 @media (max-width: 1540px) {
-    .hero {
-        height: 35vh; /* Adjust this value to control the height for medium screens */
+    .custom-hero {
+        height: 48vh; /* Slightly taller for medium-large screens */
     }
 }
 
+/* Medium screens (1000px to 1440px) */
+@media (max-width: 1200px) {
+    .custom-hero {
+        height: 53vh; /* Taller for medium screens */
+    }
+}
+
+/* Small screens (768px to 1000px) */
 @media (max-width: 1000px) {
-    .hero {
-        height: 45vh; /* Adjust this value to control the height for small screens */
+    .custom-hero {
+        height: 55vh; /* Taller for small-medium screens */
+    }
+}
+
+/* Extra small screens (480px to 768px) */
+@media (max-width: 768px) {
+    .custom-hero {
+        height: 60vh; /* Taller for extra small screens */
+    }
+}
+
+/* Very small screens (below 480px) */
+@media (max-width: 480px) {
+    .custom-hero {
+        height: 60vh; /* Tallest for very small screens */
+        background-position: center top; /* Adjust background position for better visibility */
     }
 }
 
