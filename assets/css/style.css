@@ -110,26 +110,26 @@ body {
 
 /* Default style for large screens */
 .hero {
-    height: 35vh; /* Adjust this value to control the height */
+    height: min-content; /* Adjust this value to control the height */
     background-size: cover;
-    background-position: 30%;
+    background-position: right;
 }
 
 /* Style for small screens */
 @media (max-width: 1540px) {
     .hero {
-        height: 45vh; /* Adjust this value to control the height */
+        height: min-content; /* Adjust this value to control the height */
         background-size: cover;
-        background-position: 30%;
+        background-position: right;
     }
 }
 
 /* Style for small screens */
 @media (max-width: 1000px) {
     .hero {
-        height: 55vh; /* Adjust this value to control the height */
+        height: min-content; /* Adjust this value to control the height */
         background-size: cover;
-        background-position: 30%;
+        background-position: right;
     }
 }
 
