@@ -59,7 +59,7 @@
 	}
 </style>
 
-	<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: lightslategray;">
+	<nav id="sub-navbar" class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: lightslategray;">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -72,6 +72,7 @@
 	</button>-->
 
 	<!--<div class="collapse navbar-collapse" id="collapsibleNavbar">-->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 		<ul class="nav navbar-nav">
 			<li class="nav-item dropdown active">
 				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Daily Traffic</a>
@@ -104,6 +105,23 @@
 		</ul>
 	</div>
 </nav>
+
+<!-- A script to automatically close the sub-menu after selecting an option -->
+<script>
+	$(document).ready(function () {
+	  // Add event listener for all navbar links within the #sub-navbar
+	  $('#sub-navbar .navbar-nav .nav-link').on('click', function (event) {
+		// Check if the clicked link is part of a dropdown
+		if ($(this).closest('.dropdown').length === 0) {
+		  // Check if the #sub-navbar is currently expanded
+		  if ($('#sub-navbar .navbar-collapse').hasClass('show')) {
+			$('#sub-navbar .navbar-toggler').click(); // Trigger a click on the navbar toggler to collapse the #sub-navbar
+		  }
+		}
+	  });
+	});
+</script>
+<!-- End script -->
 
 <br>
 
